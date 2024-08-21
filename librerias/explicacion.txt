@@ -1,0 +1,1 @@
+Todas las librerías y frameworks necesarios para el funcionamiento de la página
