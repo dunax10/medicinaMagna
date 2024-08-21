@@ -1,12 +1,6 @@
 <?php
-    session_start();
-    if(isset($_SESSION['mensajeError'])) 
-    {
-        echo "<script>alert('" . $_SESSION['mensajeError'] . "');</script>";
-        unset($_SESSION['mensajeError']);
-    }
+    include('mensaje.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
