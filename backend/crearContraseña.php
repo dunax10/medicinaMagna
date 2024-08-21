@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../conexion/conexion.php");
+    include("conexion.php");
     $email = $_POST['email'];
     $contraseña = $_POST['contraseña'];
 
@@ -114,7 +114,7 @@
             }
             $stmt->close();
 
-            $_SESSION['mensajeError'] = "Usuario iniciado con éxito y contraseña actualizada";
+            $_SESSION['mensaje'] = "Usuario iniciado con éxito y contraseña actualizada";
             header("location: iniciarSesionFormulario.php");
         }
     }

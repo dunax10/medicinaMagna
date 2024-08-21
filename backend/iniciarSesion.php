@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../conexion/conexion.php");
+    include("conexion.php");
     $email = $_POST['email'];
     $contraseña = $_POST['contraseña'];
 
@@ -19,12 +19,12 @@
         if(($stmt->num_rows == 0))
         {
             $stmt->close();
-            $_SESSION['mensajeError'] = "La contraseña es incorrecta";
-            header("location: ../iniciarSesion/iniciarSesionFormulario.php");
+            $_SESSION['mensaje'] = "La contraseña es incorrecta";
+            header("location: iniciarSesionFormulario.php");
         }
         else
         {
-            $_SESSION['mensajeError'] = "Usuario iniciado con éxito";
+            $_SESSION['mensaje'] = "Usuario iniciado con éxito";
             $stmt->bind_result($id);
             while ($stmt->fetch()) 
             {
@@ -32,7 +32,7 @@
                 $_SESSION['medico'] = true;
             }
             $stmt->close();
-            header("location: ../iniciarSesion/iniciarSesionFormulario.php");
+            header("location: iniciarSesionFormulario.php");
         }
     }
 
@@ -45,8 +45,8 @@
     if(($stmt->num_rows == 0))
     {
         $stmt->close();
-        $_SESSION['mensajeError'] = "El email es incorrecto";
-        header("location: ../iniciarSesion/iniciarSesionFormulario.php");
+        $_SESSION['mensaje'] = "El email es incorrecto";
+        header("location: iniciarSesionFormulario.php");
     }
     else
     {
@@ -58,12 +58,12 @@
         if(($stmt->num_rows == 0))
         {
             $stmt->close();
-            $_SESSION['mensajeError'] = "La contraseña es incorrecta";
-            header("location: ../iniciarSesion/iniciarSesionFormulario.php");
+            $_SESSION['mensaje'] = "La contraseña es incorrecta";
+            header("location: iniciarSesionFormulario.php");
         }
         else
         {
-            $_SESSION['mensajeError'] = "Usuario iniciado con éxito";
+            $_SESSION['mensaje'] = "Usuario iniciado con éxito";
             $stmt->bind_result($id, $admin, $nombre);
             while ($stmt->fetch()) 
             {
@@ -72,7 +72,7 @@
                 $_SESSION['nombreUsuario'] = $nombre;
             }
             $stmt->close();
-            header("location: ../iniciarSesion/iniciarSesionFormulario.php");
+            header("location: iniciarSesionFormulario.php");
         }
     }
 ?>

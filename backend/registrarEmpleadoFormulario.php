@@ -1,14 +1,9 @@
 <?php
-    session_start();
+    include('mensaje.php');
     if(isset($_SESSION['admin']))
     {
         if($_SESSION['admin'] == true)
         {
-            if(isset($_SESSION['mensajeError'])) 
-            {
-                echo "<script>alert('" . $_SESSION['mensajeError'] . "');</script>";
-                unset($_SESSION['mensajeError']);
-            }
             ?>
             
             <!DOCTYPE html>
@@ -35,11 +30,13 @@
         }
         else
         {
-            header("location: ../iniciarSesion/iniciarSesionFormulario.php");
+            $_SESSION['mensaje'] = "Debe ser administrador para registrar empleados";
+            header("location: iniciarSesionFormulario.php");
         }
     }
     else
     {
-        header("location: ../iniciarSesion/iniciarSesionFormulario.php");
+        $_SESSION['mensaje'] = "Debe iniciar sesion";
+        header("location: iniciarSesionFormulario.php");
     }
 ?>

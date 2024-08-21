@@ -1,5 +1,5 @@
 <?php
-    include('../conexion/conexion.php');
+    include('conexion.php');
     session_start();
     $email = $_POST['email'];
     
@@ -53,13 +53,13 @@
 
         include('registrarEmpleado.php');
 
-        $_SESSION['mensajeError'] = "Usuario creado con éxito";
-        header("location: ../iniciarSesion/iniciarSesionFormulario.php");
+        $_SESSION['mensaje'] = "Usuario creado con éxito";
+        header("location: iniciarSesionFormulario.php");
     }
     else
     {
-        $_SESSION['mensajeError'] = "El mail ya existe";
-        header("location: ../iniciarSesion/iniciarSesionFormulario.php");
+        $_SESSION['mensaje'] = "El mail ya existe";
+        header("location: iniciarSesionFormulario.php");
         $stmt->close();
     }
 ?>
