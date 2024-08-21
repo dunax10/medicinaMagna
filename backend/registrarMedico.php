@@ -4,7 +4,7 @@
     $email = $_POST['email'];
     
     // Verificar si el email ya existe en la base de datos
-    $sql = "SELECT mail FROM medicos WHERE mail = ?";
+    $sql = "SELECT mail FROM empleados WHERE mail = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
     $stmt->execute();
@@ -20,11 +20,10 @@
         $fechaIngreso = $_POST['fechaIngreso'];
         $telefono = $_POST['telefono'];
         $domicilio = $_POST['domicilio'];
-        $contraseña = $_POST['contraseña'];
+        $contraseña = "noCreada";
 
-        $hashedPassword = password_hash($contraseña, PASSWORD_DEFAULT);
         // Preparar la consulta
-        $stmt = $conn->prepare("INSERT INTO `medicos`(`nombre`, `apellido`, `dni`, `sexo`, `fechaNacimiento`, `fechaIngreso`, `telefono`, `domicilio`, `mail`, `disponibilidad`, `contraseña`) VALUES (?,?,?,?,?,?,?,?,?,1,?)");
+        $stmt = $conn->prepare("INSERT INTO `empleados`(`nombre`, `mail`, `contraseña`, `administrador`, `vigente`) VALUES (?,?,?,0,1)");
 
         // Verificar si la preparación fue exitosa
         if ($stmt === false) 
@@ -33,7 +32,49 @@
         }
 
         // Vincular parámetros
-        $stmt->bind_param('ssssssssss', $nombre, $apellido, $dni, $sexo, $fechaNacimiento, $fechaIngreso, $telefono, $domicilio, $email, $contraseña);
+        $stmt->bind_param('sss', $nombre, $email, $contraseña);
+
+        // Ejecutar la consulta
+        $resultado = $stmt->execute();
+
+        // Verificar si la ejecución fue exitosa
+        if ($resultado === false) 
+        {
+            die('Error en la ejecución: ' . $stmt->error);
+        } 
+        else 
+        {
+            echo "Registro insertado exitosamente.";
+        }
+
+        // Cerrar la declaración
+        $stmt->close();
+
+
+        // Obtener el ID de la última factura
+        $sql = "SELECT idEmpleado FROM empleados WHERE mail = ? ORDER BY idEmpleado DESC LIMIT 1";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $fetch = $result->fetch_assoc();
+
+        $idEmpleado = $fetch['idEmpleado'];
+        $stmt->close(); // Cierra la consulta
+        
+
+
+        // Preparar la consulta
+        $stmt = $conn->prepare("INSERT INTO `medicos`(`nombre`, `apellido`, `dni`, `sexo`, `fechaNacimiento`, `fechaIngreso`, `telefono`, `domicilio`, `disponibilidad`, `idEmpleado`) VALUES (?,?,?,?,?,?,?,?,1,$idEmpleado)");
+
+        // Verificar si la preparación fue exitosa
+        if ($stmt === false) 
+        {
+            die('Error en la preparación: ' . $conn->error);
+        }
+
+        // Vincular parámetros
+        $stmt->bind_param('ssssssss', $nombre, $apellido, $dni, $sexo, $fechaNacimiento, $fechaIngreso, $telefono, $domicilio);
 
         // Ejecutar la consulta
         $resultado = $stmt->execute();

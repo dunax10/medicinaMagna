@@ -23,6 +23,7 @@
                     <input type="hidden" name="contraseña" value="noCreada"><br>
                     <input type="submit" name="enviar" value="Enviar">
                 </form>
+                <a href="registrarMedicoFormulario.php">Quiere ingresar un médico?</a>
             </body>
             </html>
 

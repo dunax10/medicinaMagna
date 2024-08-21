@@ -1,8 +1,8 @@
 <?php
     include('mensaje.php');
-    if(isset($_SESSION['admin']))
+    if(isset($_SESSION['medico']))
     {
-        if($_SESSION['admin'] == true)
+        if($_SESSION['medico'] == true)
         {
             ?>
 
@@ -14,7 +14,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="registrarMedico.php" method="post">
+                <form action="registrarPaciente.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
                     <label>Apellido:</label>
@@ -24,8 +24,17 @@
                         <option value="F">Mujer</option>
                         <option value="M">Hombre</option>
                     </select><br>
-                    <label>Fecha de ingreso:</label>
-                    <input type="date" name="fechaIngreso" required><br>
+                    <label>Tipo de sangre:</label>
+                    <select name="tipoSangre" required>
+                        <option value="A+">A+</option>
+                        <option value="B+">B+</option>
+                        <option value="O+">O+</option>
+                        <option value="AB+">AB+</option>
+                        <option value="A-">A-</option>
+                        <option value="B-">B-</option>
+                        <option value="O-">O-</option>
+                        <option value="AB-">AB-</option>
+                    </select><br>
                     <label>DNI:</label>
                     <input type="number" name="dni" placeholder="Ingrese el dni" required><br>
                     <label>Telefono:</label>
@@ -45,7 +54,7 @@
         }
         else
         {
-            $_SESSION['mensaje'] = "Debe ser administrador para registrar empleados";
+            $_SESSION['mensaje'] = "Debe ser medico para registrar pacientes";
             header("location: iniciarSesionFormulario.php");
         }
     }
