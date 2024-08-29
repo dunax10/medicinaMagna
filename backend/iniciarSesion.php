@@ -44,7 +44,7 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $stmt->store_result();
-            if(($stmt->num_rows == 0))
+            if($stmt->num_rows != 0)
             {
                 $_SESSION['medico'] = true;
             }

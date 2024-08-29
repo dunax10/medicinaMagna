@@ -15,10 +15,10 @@
             //almaceno el resultado para verificar
             $stmt->store_result();
             //traigo los resultados de la consulta y la recorro con un while
-            $stmt->bind_result($idMedicina, $nombre);
+            $stmt->bind_result($idPaciente, $nombre, $apellido, $dni, $telefono, $domicilio, $tipoSangre, $sexo, $fechaNacimiento, $mail);
             while ($stmt->fetch()) 
             {
-                echo "id $idMedicina nombre $nombre<br>";
+                echo "ID: $idPaciente NOMBRE: $nombre APELLIDO: $apellido DNI: $dni TELEFONO: $telefono DOMICILIO: $domicilio TIPO DE SANGRE: $tipoSangre SEXO: $sexo FECHA DE NACIMIENTO: $fechaNacimiento MAIL: $mail<br>";
             }
             $stmt->close();
         }

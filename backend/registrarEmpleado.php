@@ -15,7 +15,7 @@
         $nombre = $_POST['nombre'] ?? $nombre;
         $contraseña = $_POST['contraseña'] ?? $contraseña;
         // Preparar la consulta
-        $stmt = $conn->prepare("INSERT INTO `empleados`(`nombre`, `mail`, `contraseña`, `admin`, `vigente`) VALUES (?, ?, ?,0, 1)");
+        $stmt = $conn->prepare("INSERT INTO `empleados`(`nombre`, `mail`, `contraseña`, `administrador`) VALUES (?, ?, ?,0)");
 
         // Verificar si la preparación fue exitosa
         if ($stmt === false) 
