@@ -2,11 +2,12 @@
     include('conexion.php');
     session_start();
     $idPaciente = $_POST['idPaciente'];
-    $descripcionMalestar = $_POST['descripcionMalestar'];
+    $cantidadMedicamento = $_POST['cantidadMedicamento'];
+    $periodoMedicamento = $_POST['periodoMedicamento'];
     $fecha = date("Y-m-d");
 
     // Preparar la consulta
-    $stmt = $conn->prepare("INSERT INTO `historiales_clinicos`(`idPaciente`, `fecha`, `descripcionMalestar`) VALUES (?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO `recetas`(`idPaciente`, `fecha`, `cantidadMedicamento`, `periodoMedicamentos`) VALUES (?,?,?,?)");
 
     // Verificar si la preparación fue exitosa
     if ($stmt === false) 
@@ -15,7 +16,7 @@
     }
 
     // Vincular parámetros
-    $stmt->bind_param('sss', $idPaciente, $fecha, $descripcionMalestar);
+    $stmt->bind_param('ssss', $idPaciente, $fecha, $cantidadMedicamento, $periodoMedicamento);
 
     // Ejecutar la consulta
     $resultado = $stmt->execute();
@@ -31,11 +32,11 @@
     }
     $stmt->close();
 
-    $sql = "SELECT idHistorial FROM historiales_clinicos ORDER BY idHistorial DESC LIMIT 1;";
+    $sql = "SELECT idReceta FROM recetas ORDER BY idReceta DESC LIMIT 1;";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($idHistorial);
+    $stmt->bind_result($idReceta);
     while ($stmt->fetch()) 
     {
         $idEnfermedad = $_POST['idEnfermedad'];
@@ -43,7 +44,7 @@
         // Preparar la consulta
         if($idMedicamento != 0)
         {
-            $stmt = $conn->prepare("INSERT INTO `medicamentos_historiales_clinicos`(`idHistorial`, `idMedicamento`) VALUES (?, ?)");
+            $stmt = $conn->prepare("INSERT INTO `medicamentos_recetas`(`idReceta`, `idMedicamento`) VALUES (?, ?)");
 
             // Verificar si la preparación fue exitosa
             if ($stmt === false) 
@@ -52,7 +53,7 @@
             }
 
             // Vincular parámetros
-            $stmt->bind_param('ss', $idHistorial, $idMedicamento);
+            $stmt->bind_param('ss', $idReceta, $idMedicamento);
 
             // Ejecutar la consulta
             $resultado = $stmt->execute();
@@ -73,7 +74,7 @@
 
         if($idEnfermedad != 0)
         {
-            $stmt = $conn->prepare("INSERT INTO `enfermedades_historiales_clinicos`(`idHistorial`, `idEnfermedad`) VALUES (?, ?)");
+            $stmt = $conn->prepare("INSERT INTO `enfermedades_recetas`(`idReceta`, `idEnfermedad`) VALUES (?, ?)");
 
             // Verificar si la preparación fue exitosa
             if ($stmt === false) 
@@ -82,7 +83,7 @@
             }
 
             // Vincular parámetros
-            $stmt->bind_param('ss', $idHistorial, $idEnfermedad);
+            $stmt->bind_param('ss', $idReceta, $idEnfermedad);
 
             // Ejecutar la consulta
             $resultado = $stmt->execute();
@@ -101,9 +102,8 @@
             $stmt->close();
         }
 
-        $_SESSION['mensaje'] = "historial vinculado con éxito";
-        $stmt->close();
-        header("location: asociarHistoriasClinicasFormulario.php");
+        $_SESSION['mensaje'] = "receta vinculada con éxito";
+        header("location: asociarRecetasFormulario.php");
     }
     $stmt->close();
 ?>

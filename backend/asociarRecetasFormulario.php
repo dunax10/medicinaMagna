@@ -1,5 +1,5 @@
 <?php
-//INSERT INTO `historiales_clinicos`(`idPaciente`, `fecha`, `descripcionMalestar`) VALUES (
+//idPaciente	fecha	cantidadMedicamento	periodoMedicamentos	
     include('mensaje.php');
     if(isset($_SESSION['medico']))
     {
@@ -20,14 +20,17 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="asociarHistoriasClinicas.php" method="post">
+                <form action="asociarRecetas.php" method="post">
                     <label>Seleccione un paciente:</label>
                     <select id='BuscarPacientes' style='width: 200px;' lang="es" name="idPaciente" required>
                         <option value='0'>- Buscar pacientes -</option>
                     </select><br>
 
-                    <label>descripcion del malestar:</label>
-                    <input type="text" name="descripcionMalestar" placeholder="Ingrese la descripcion" required><br>
+                    <label>Cantidad del medicamento:</label>
+                    <input type="number" name="cantidadMedicamento" placeholder="Ingrese la cantidad" required><br>
+
+                    <label>Periodo del medicamento:</label>
+                    <input type="text" name="periodoMedicamento" placeholder="Ingrese el periodo (ej: 8hs)" required><br>
 
                     <label>Seleccione una enfermedad:</label>
                     <select id='BuscarEnfermedades' style='width: 200px;' lang="es" name="idEnfermedad">
@@ -35,7 +38,7 @@
                     </select><br>
 
                     <label>Seleccione un medicamento:</label>
-                    <select id='BuscarMedicamentos' style='width: 200px;' lang="es" name="idMedicamento">
+                    <select id='BuscarMedicamentos' style='width: 200px;' lang="es" name="idMedicamento" required>
                         <option value='0'>- Buscar medicamentos -</option>
                     </select><br>
 
@@ -44,6 +47,16 @@
             </body>
             </html>
             <script src="select2.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("form").submit(function(e) {
+                        if ($("#BuscarMedicamentos").val() === null || $("#BuscarMedicamentos").val() === '0') {
+                            alert("Por favor, selecciona un medicamento.");
+                            e.preventDefault();  // Evita el envío del formulario si no se selecciona nada
+                        }
+                    });
+                });
+            </script>
 
             <?php
         }

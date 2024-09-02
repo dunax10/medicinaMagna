@@ -1,8 +1,8 @@
 <?php
     include('mensaje.php');
-    if(isset($_SESSION['medico']))
+    if(isset($_SESSION['admin']))
     {
-        if($_SESSION['medico'] == true)
+        if($_SESSION['admin'] == true)
         {
             ?>
             
@@ -14,9 +14,11 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="crearMedicamento.php" method="post">
+                <form action="agregarObrasSociales.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
+                    <label>Telefono:</label>
+                    <input type="text" name="telefono" placeholder="Ingrese el telefono" required><br>
                     <input type="submit" name="enviar" value="Enviar">
                 </form>
             </body>
@@ -26,7 +28,7 @@
         }
         else
         {
-            $_SESSION['mensaje'] = "Debe ser medico";
+            $_SESSION['mensaje'] = "Debe ser administrador";
             header("location: iniciarSesionFormulario.php");
         }
     }
