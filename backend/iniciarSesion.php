@@ -4,7 +4,7 @@
     $email = $_POST['email'] ?? $email;
     $contraseña = $_POST['contraseña'] ?? $contraseña;
 
-    $sql = "SELECT mail FROM empleados WHERE mail = ?";
+    $sql = "SELECT mail FROM empleados WHERE mail = ? AND vigente = 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
     $stmt->execute();
@@ -17,7 +17,7 @@
     }
     else
     {
-        $sql = "SELECT idEmpleado, administrador, nombre FROM empleados WHERE mail = ? AND contraseña = ?";
+        $sql = "SELECT idEmpleado, administrador, nombre FROM empleados WHERE mail = ? AND contraseña = ? AND vigente = 1";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('ss', $email, $contraseña);
         $stmt->execute();

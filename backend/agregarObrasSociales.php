@@ -7,7 +7,7 @@
             include('conexion.php');
             $nombre = $_POST['nombre'];
             $nombre = ucfirst($nombre);
-            $sql = "SELECT nombre FROM obras_sociales WHERE nombre = ?";
+            $sql = "SELECT nombre FROM obras_sociales WHERE nombre = ? AND vigente = 1";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('s', $nombre);
             $stmt->execute();
@@ -16,7 +16,7 @@
             {
                 $stmt->close();
                 $telefono = $_POST['telefono'];
-                $sql = "INSERT INTO `obras_sociales`(`nombre`, `telefono`) VALUES (?, ?)";
+                $sql = "INSERT INTO `obras_sociales`(`nombre`, `telefono`, `vigente`) VALUES (?, ?, 1)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param('ss', $nombre, $telefono);
                 $stmt->execute();

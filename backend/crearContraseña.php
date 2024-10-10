@@ -4,7 +4,7 @@
     $email = $_POST['email'];
     $contraseña = $_POST['contraseña'];
 
-    $sql = "SELECT mail FROM empleados WHERE mail = ?";
+    $sql = "SELECT mail FROM empleados WHERE mail = ? AND vigente = 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
     $stmt->execute();
@@ -17,7 +17,7 @@
     }
     else
     {
-        $sql = "SELECT idEmpleado FROM empleados WHERE mail = ? AND contraseña = 'noCreada'";
+        $sql = "SELECT idEmpleado FROM empleados WHERE mail = ? AND contraseña = 'noCreada' AND vigente = 1";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('s', $email);
         $stmt->execute();
@@ -32,7 +32,7 @@
         {
             $stmt->close();
 
-            $stmt = $conn->prepare("UPDATE `empleados` SET contraseña = ? WHERE mail = ?");
+            $stmt = $conn->prepare("UPDATE `empleados` SET contraseña = ? WHERE mail = ? AND vigente = 1");
             // Verificar si la preparación fue exitosa
             if ($stmt === false) 
             {

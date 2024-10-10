@@ -7,7 +7,7 @@
             include('conexion.php');
             $nombre = $_POST['nombre'];
             $nombre = ucfirst($nombre);
-            $sql = "SELECT nombre FROM consultorios WHERE nombre = ?";
+            $sql = "SELECT nombre FROM consultorios WHERE nombre = ? AND vigente = 1";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('s', $nombre);
             $stmt->execute();

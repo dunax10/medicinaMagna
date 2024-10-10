@@ -6,12 +6,12 @@
 
     if(!isset($_POST['searchTerm']) || empty($_POST['searchTerm'])) {
         // Obtener registros a través de la consulta SQL
-        $stmt = $conn->prepare("SELECT idEnfermedad, nombre FROM enfermedades ORDER BY nombre LIMIT ?");
+        $stmt = $conn->prepare("SELECT idEnfermedad, nombre FROM enfermedades WHERE vigente = 1 ORDER BY nombre LIMIT ? ");
         $stmt->bind_param('i', $numberofrecords);
     } else {
         $search = '%' . $_POST['searchTerm'] . '%'; // Search text con comodines
         // Mostrar resultados
-        $stmt = $conn->prepare("SELECT idEnfermedad, nombre FROM enfermedades WHERE nombre LIKE ? ORDER BY nombre LIMIT ?");
+        $stmt = $conn->prepare("SELECT idEnfermedad, nombre FROM enfermedades WHERE nombre AND vigente = 1 LIKE ? ORDER BY nombre LIMIT ? ");
         $stmt->bind_param('si', $search, $numberofrecords);
     }
 

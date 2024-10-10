@@ -6,7 +6,7 @@
     $fecha = date("Y-m-d");
 
     // Preparar la consulta
-    $stmt = $conn->prepare("INSERT INTO `historiales_clinicos`(`idPaciente`, `fecha`, `descripcionMalestar`) VALUES (?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO `historiales_clinicos`(`idPaciente`, `fecha`, `descripcionMalestar`, `vigente`) VALUES (?,?,?,1)");
 
     // Verificar si la preparación fue exitosa
     if ($stmt === false) 
@@ -31,7 +31,7 @@
     }
     $stmt->close();
 
-    $sql = "SELECT idHistorial FROM historiales_clinicos ORDER BY idHistorial DESC LIMIT 1;";
+    $sql = "SELECT idHistorial FROM historiales_clinicos ORDER BY idHistorial DESC LIMIT 1 WHERE vigente = 1;";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $stmt->store_result();

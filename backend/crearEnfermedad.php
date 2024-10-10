@@ -5,7 +5,7 @@
         include('conexion.php');
         $nombre = $_POST['nombre'];
         $nombre = ucfirst($nombre);
-        $sql = "SELECT nombre FROM enfermedades WHERE nombre = ?";
+        $sql = "SELECT nombre FROM enfermedades WHERE nombre = ? AND vigente = 1";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('s', $nombre);
         $stmt->execute();
@@ -13,7 +13,7 @@
         if($stmt->num_rows == 0)
         {
             $stmt->close();
-            $sql = "INSERT INTO `enfermedades`(`nombre`) VALUES (?)";
+            $sql = "INSERT INTO `enfermedades`(`nombre`, `vigente`) VALUES (?,1)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('s', $nombre);
             $stmt->execute();

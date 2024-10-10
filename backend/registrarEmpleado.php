@@ -4,7 +4,7 @@
     $email = $_POST['email'] ?? $email;
     
     // Verificar si el email ya existe en la base de datos
-    $sql = "SELECT mail FROM empleados WHERE mail = ?";
+    $sql = "SELECT mail FROM empleados WHERE mail = ? AND vigente = 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
     $stmt->execute();
@@ -15,7 +15,7 @@
         $nombre = $_POST['nombre'] ?? $nombre;
         $contraseña = $_POST['contraseña'] ?? $contraseña;
         // Preparar la consulta
-        $stmt = $conn->prepare("INSERT INTO `empleados`(`nombre`, `mail`, `contraseña`, `administrador`) VALUES (?, ?, ?,0)");
+        $stmt = $conn->prepare("INSERT INTO `empleados`(`nombre`, `mail`, `contraseña`, `administrador`, `vigente`) VALUES (?, ?, ?, 0, 1)");
 
         // Verificar si la preparación fue exitosa
         if ($stmt === false) 

@@ -4,7 +4,7 @@
     $email = $_POST['email'];
     
     // Verificar si el email ya existe en la base de datos
-    $sql = "SELECT mail FROM pacientes WHERE mail = ?";
+    $sql = "SELECT mail FROM pacientes WHERE mail = ? AND vigente = 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
     $stmt->execute();
@@ -22,7 +22,7 @@
         $tipoSangre = $_POST['tipoSangre'];
 
         // Preparar la consulta
-        $stmt = $conn->prepare("INSERT INTO `pacientes`(`nombre`, `apellido`, `dni`, `telefono`, `domicilio`, `tipoSangre`, `sexo`, `fechaNacimiento`, `mail`) VALUES (?,?,?,?,?,?,?,?,?)");
+        $stmt = $conn->prepare("INSERT INTO `pacientes`(`nombre`, `apellido`, `dni`, `telefono`, `domicilio`, `tipoSangre`, `sexo`, `fechaNacimiento`, `mail`, `vigente`) VALUES (?,?,?,?,?,?,?,?,?,1)");
 
         // Verificar si la preparación fue exitosa
         if ($stmt === false) 

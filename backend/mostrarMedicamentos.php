@@ -5,7 +5,7 @@
     {
         $idUsuario = $_SESSION['idUsuario'];
 
-        $sql = "SELECT * FROM medicamentos ORDER BY nombre ASC;";
+        $sql = "SELECT * FROM medicamentos WHERE vigente = 1 ORDER BY nombre ASC;";
         //preparo la conexion
         $stmt = $conn->prepare($sql);
         //ejecuto la consulta

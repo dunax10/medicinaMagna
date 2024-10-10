@@ -3,7 +3,7 @@
     session_start();
     $idObraSocial = $_POST['idObraSocial'];
 
-    $sql = "SELECT idObraSocial FROM obras_sociales WHERE idObraSocial = ?";
+    $sql = "SELECT idObraSocial FROM obras_sociales WHERE idObraSocial = ? AND vigente = 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $idObraSocial);
     $stmt->execute();
