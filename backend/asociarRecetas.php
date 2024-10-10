@@ -7,7 +7,7 @@
     $fecha = date("Y-m-d");
 
     // Preparar la consulta
-    $stmt = $conn->prepare("INSERT INTO `recetas`(`idPaciente`, `fecha`, `cantidadMedicamento`, `periodoMedicamentos`, `vigente`) VALUES (?,?,?,?,1)");
+    $stmt = $conn->prepare("INSERT INTO `recetas`(`idPaciente`, `fecha`, `cantidadMedicamento`, `periodoMedicamentos`) VALUES (?,?,?,?)");
 
     // Verificar si la preparación fue exitosa
     if ($stmt === false) 

@@ -7,7 +7,7 @@
         {
             $idUsuario = $_SESSION['idUsuario'];
 
-            $sql = "SELECT * FROM obras_sociales WHERE vigente = 1 ORDER BY nombre ASC;";
+            $sql = "SELECT * FROM obras_sociales WHERE vigente = 0 ORDER BY nombre ASC;";
             //preparo la conexion
             $stmt = $conn->prepare($sql);
             //ejecuto la consulta
@@ -18,7 +18,7 @@
             $stmt->bind_result($idObraSocial, $nombre, $telefono, $vigente);
             while ($stmt->fetch()) 
             {
-                echo "<form action='darBajaObraSocial.php' method='post'>
+                echo "<form action='restaurarObraSocial.php' method='post'>
                     <input type='hidden' name='idObraSocial' value='$idObraSocial'>
                     <input type='submit' value='X'>
                 </form>";

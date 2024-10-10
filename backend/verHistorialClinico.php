@@ -7,7 +7,7 @@
         {
             $idPaciente = $_GET['idPaciente'];
 
-            $sql = "SELECT * FROM historiales_clinicos WHERE idPaciente = $idPaciente AND vigente = 1 ORDER BY fecha ASC;";
+            $sql = "SELECT * FROM historiales_clinicos WHERE idPaciente = $idPaciente ORDER BY fecha ASC;";
             //preparo la conexion
             $stmt = $conn->prepare($sql);
             //ejecuto la consulta

@@ -7,7 +7,7 @@
         {
             $idUsuario = $_SESSION['idUsuario'];
 
-            $sql = "SELECT * FROM pacientes WHERE vigente = 1 ORDER BY nombre ASC;";
+            $sql = "SELECT * FROM pacientes WHERE vigente = 0 ORDER BY nombre ASC;";
             //preparo la conexion
             $stmt = $conn->prepare($sql);
             //ejecuto la consulta
@@ -22,7 +22,7 @@
                 {
                     if($_SESSION['admin'] == true)
                     {
-                            echo "<form action='darBajaPacientes.php' method='post'>
+                            echo "<form action='restaurarPaciente.php' method='post'>
                                 <input type='hidden' name='idPaciente' value='$idPaciente'>
                                 <input type='submit' value='X'>
                             </form>";

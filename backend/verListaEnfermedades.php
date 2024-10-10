@@ -16,6 +16,16 @@
         $stmt->bind_result($idMedicina, $nombre);
         while ($stmt->fetch()) 
         {
+            if(isset($_SESSION['admin']))
+            {
+                if($_SESSION['admin'] == true)
+                {
+                        echo "<form action='darBajaEnfermedad.php' method='post'>
+                            <input type='hidden' name='idEnfermedad' value='$idEnfermedad'>
+                            <input type='submit' value='X'>
+                        </form>";
+                }
+            }
             echo "id $idMedicina nombre $nombre<br>";
         }
         $stmt->close();

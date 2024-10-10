@@ -6,7 +6,7 @@
     $fecha = date("Y-m-d");
 
     // Preparar la consulta
-    $stmt = $conn->prepare("INSERT INTO `historiales_clinicos`(`idPaciente`, `fecha`, `descripcionMalestar`, `vigente`) VALUES (?,?,?,1)");
+    $stmt = $conn->prepare("INSERT INTO `historiales_clinicos`(`idPaciente`, `fecha`, `descripcionMalestar`) VALUES (?,?,?)");
 
     // Verificar si la preparación fue exitosa
     if ($stmt === false) 
