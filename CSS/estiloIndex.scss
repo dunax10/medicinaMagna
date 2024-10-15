@@ -1,0 +1,31 @@
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+//crea la paleta de colores a utilizar
+
+$theme-colors: (
+  "primary":    rgba(163, 213, 255),
+  "secondary":  rgba(131, 201, 244),
+  "info":       rgba(163, 213, 255),
+  "light":      rgba(217, 240, 255),
+  "dark":       rgba(35, 87, 137)
+);
+/*$coloresPersonalizados: (
+    "fondo": rgba(217, 240, 255),
+    "terciario": rgba(163, 213, 255),
+    "secundario": rgba(131, 201, 244),
+    "primario": rgba(79, 98, 186),
+    "fondoOscuro": rgba(35, 87, 137)
+);
+
+// reemplaza el theme-colors por el coloresPersonalizados
+$theme-colors: map-remove($theme-colors, $coloresPersonalizados);
+// importa el bootstrap completo para ser modificado*/
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+.encabezado{
+  background-color: rgba(131, 201, 244, 1);;
+}
