@@ -6,7 +6,7 @@
         if($_SESSION['admin'] == true)
         {
             $idEnfermedad = $_POST['idEnfermedad'];
-            $stmt = $conn->prepare("UPDATE `enfermedades` SET vigente = 0 WHERE idEnfermedad = ? AND vigente = 1");
+            $stmt = $conn->prepare("UPDATE `enfermedades` SET vigente = 1 WHERE idEnfermedad = ? AND vigente = 0");
             // Verificar si la preparación fue exitosa
             if ($stmt === false) 
             {
@@ -27,8 +27,8 @@
             }
             $stmt->close();
 
-            $_SESSION['mensaje'] = "Enfermedad eliminada exitosamente";
-            header('Location: verListaEnfermedades.php');
+            $_SESSION['mensaje'] = "Enfermedad restaurada exitosamente";
+            header('Location: verListaEnfermedadesDadasBaja.php');
         }
         else
         {

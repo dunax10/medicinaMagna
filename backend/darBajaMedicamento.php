@@ -5,15 +5,15 @@
     {
         if($_SESSION['admin'] == true)
         {
-            $idEnfermedad = $_POST['idEnfermedad'];
-            $stmt = $conn->prepare("UPDATE `enfermedades` SET vigente = 0 WHERE idEnfermedad = ? AND vigente = 1");
+            $idMedicamento = $_POST['idMedicamento'];
+            $stmt = $conn->prepare("UPDATE `medicamentos` SET vigente = 0 WHERE idMedicamento = ? AND vigente = 1");
             // Verificar si la preparación fue exitosa
             if ($stmt === false) 
             {
                 die('Error en la preparación: ' . $conn->error);
             }
             // Vincular parámetros
-            $stmt->bind_param('s', $idEnfermedad);
+            $stmt->bind_param('s', $idMedicamento);
             // Ejecutar la consulta
             $resultado = $stmt->execute();
             // Verificar si la ejecución fue exitosa
@@ -27,8 +27,8 @@
             }
             $stmt->close();
 
-            $_SESSION['mensaje'] = "Enfermedad eliminada exitosamente";
-            header('Location: verListaEnfermedades.php');
+            $_SESSION['mensaje'] = "Medicamento eliminado exitosamente";
+            header('Location: verListaMedicamentos.php');
         }
         else
         {
