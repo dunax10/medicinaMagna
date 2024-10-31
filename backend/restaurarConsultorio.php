@@ -12,15 +12,15 @@
     {
         if($_SESSION['admin'] == true)
         {
-            $idReceta = $_POST['idReceta'];
-            $stmt = $conn->prepare("UPDATE `recetas` SET vigente = 1 WHERE idMedicamento = ? AND vigente = 0");
+            $idConsultorio = $_POST['idConsultorio'];
+            $stmt = $conn->prepare("UPDATE `consultorios` SET vigente = 1 WHERE idConsultorio = ? AND vigente = 0");
             // Verificar si la preparación fue exitosa
             if ($stmt === false) 
             {
                 die('Error en la preparación: ' . $conn->error);
             }
             // Vincular parámetros
-            $stmt->bind_param('s', $idReceta);
+            $stmt->bind_param('s', $idConsultorio);
             // Ejecutar la consulta
             $resultado = $stmt->execute();
             // Verificar si la ejecución fue exitosa
@@ -34,8 +34,8 @@
             }
             $stmt->close();
 
-            $_SESSION['mensaje'] = "Receta restaurada exitosamente";
-            header('Location: verListaRecetas.php');
+            $_SESSION['mensaje'] = "Consultorio restaurado exitosamente";
+            header('Location: verListaConsultorios.php');
         }
         else
         {

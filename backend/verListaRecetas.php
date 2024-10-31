@@ -90,6 +90,12 @@
                         </ul>
                         <p><strong>Periodo del Medicamento:</strong> <?= $periodoMedicamento ?></p>
                         <p><strong>Cantidad del Medicamento:</strong> <?= $cantidadMedicamento ?></p>
+                        <?php if ($_SESSION['admin'] == true): ?>
+                        <form action="darBajaReceta.php" method="post" class="mt-2">
+                            <input type="hidden" name="idReceta" value="<?= $idReceta ?>">
+                            <button type="submit" class="delete-btn">Eliminar</button>
+                        </form>
+                    <?php endif; ?>
                     </div>
                 </div>
             </div>
