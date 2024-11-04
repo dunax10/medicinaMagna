@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 12, 2024 at 11:00 PM
+-- Generation Time: Nov 04, 2024 at 01:11 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -100,7 +100,7 @@ CREATE TABLE `empleados` (
 
 INSERT INTO `empleados` (`idEmpleado`, `nombre`, `mail`, `contraseña`, `administrador`, `vigente`) VALUES
 (1, 'nombre123', 'afsd@adfs', '123', 0, 0),
-(2, 'Admin', 'adminReal@gmail.com', '123', 1, 0),
+(2, 'Admin', 'adminReal@gmail.com', '123', 1, 1),
 (3, 'oiijk', 'jkh@wertyuy', 'hola123', 0, 0),
 (4, 'oiijk', 'jkh@we', 'noCreada', 0, 0),
 (5, 'Medico', 'asdfasf@asdf', '123', 0, 1),
