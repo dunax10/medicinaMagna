@@ -11,7 +11,7 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($idMedico, $nombre, $apellido, $sexo, $dni, $fechaNacimiento, $fechaIngreso, $telefono, $domicilio, $disponibilidad, $idEmpleado, $vigente);
+            $stmt->bind_result($idMedico, $nombre, $apellido, $dni, $sexo, $fechaNacimiento, $fechaIngreso, $telefono, $domicilio, $disponibilidad, $idEmpleado, $vigente);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,6 +60,18 @@
                         <strong>Fecha de Nacimiento:</strong> <?= $fechaNacimiento ?>
                     </div>
                     <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true) { ?>
+                        <form action="../backend/modificarMedicoFormulario.php" method="post" class="mt-2">
+                            <input type="hidden" name="idMedico" value="<?= $idMedico ?>">
+                            <input type="hidden" name="nombre" value="<?= $nombre ?>">
+                            <input type="hidden" name="apellido" value="<?= $apellido ?>">
+                            <input type="hidden" name="dni" value="<?= $dni ?>">
+                            <input type="hidden" name="telefono" value="<?= $telefono ?>">
+                            <input type="hidden" name="domicilio" value="<?= $domicilio ?>">
+                            <input type="hidden" name="fechaIngreso" value="<?= $fechaIngreso ?>">
+                            <input type="hidden" name="sexo" value="<?= $sexo ?>">
+                            <input type="hidden" name="fechaNacimiento" value="<?= $fechaNacimiento ?>">
+                            <button type="submit" class="delete-btn">Modificar</button>
+                        </form>
                         <form action="darBajaMedico.php" method="post">
                             <input type="hidden" name="idMedico" value="<?= $idMedico ?>">
                             <button type="submit" class="btn btn-delete">Eliminar</button>
