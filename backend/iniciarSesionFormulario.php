@@ -15,7 +15,7 @@
 <body>
     <div class="contenedorSesion">
         <h2 class="text-center mb-4">Iniciar Sesión</h2>
-        <form action="iniciarSesion.php" method="post">
+        <form action="../backend/iniciarSesion.php" method="post">
             <!-- Email input -->
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electrónico</label>

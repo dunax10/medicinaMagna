@@ -1,18 +1,22 @@
 <?php
     include('conexion.php');
     include('mensaje.php');
-    session_start();
 
-    if (isset($_SESSION['medico']) && $_SESSION['medico'] == true) {
+    if (isset($_SESSION['medico']) && $_SESSION['medico'] == true){
         $idPaciente = $_GET['idPaciente'];
 
         // Consulta para obtener las recetas del paciente
-        $sql = "SELECT * FROM recetas WHERE idPaciente = ? ORDER BY fecha ASC;";
+        $sql = "SELECT r.*, p.nombre FROM recetas AS r JOIN pacientes AS p ON r.idPaciente = p.idPaciente  WHERE r.idPaciente = ? ORDER BY r.fecha ASC;";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('i', $idPaciente);
         $stmt->execute();
         $stmt->store_result();
-        $stmt->bind_result($idReceta, $idPaciente, $fecha, $cantidadMedicamento, $periodoMedicamento, $vigente);
+        if($stmt->num_rows == 0)
+        {
+            $_SESSION['mensaje'] = "No tiene recetas";
+            header('location: verListaPacientes.php');
+        }
+        $stmt->bind_result($idReceta, $idPaciente, $fecha, $cantidadMedicamento, $periodoMedicamento, $nombrePaciente);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -46,51 +50,70 @@
         <h1 class="text-center mb-4">Recetas del Paciente</h1>
         <div class="row">
         <?php
-            while ($stmt->fetch()) {
+            while ($stmt->fetch()) 
         ?>
             <div class="col-md-6">
                 <div class="receta-card">
                     <div class="receta-header">
-                        <h5>Receta del <?= date("d/m/Y", strtotime($fecha)); ?></h5>
-                    </div>
-                    <div class="receta-body">
-                        <strong>Medicamentos:</strong>
+                        <?php if ($_SESSION['admin'] == true): ?>
+                            <form action="modificarRecetaFormulario.php" method="post" class="mt-2">
+                            <input type="hidden" name="idReceta" value="<?= $idReceta ?>">
+                            <input type="hidden" name="idPaciente" value="<?= $idPaciente ?>">
+                            <input type="hidden" name="nombrePaciente" value="<?= $nombrePaciente ?>">
+                            <input type="hidden" name="fecha" value="<?= $fecha ?>">
+                            <input type="hidden" name="periodo" value="<?= $periodoMedicamento ?>">
+                            <input type="hidden" name="cantidad" value="<?= $cantidadMedicamento ?>">
+                        <?php endif; ?>
+                            <h5>Receta del <?= date("d/m/Y", strtotime($fecha)); ?></h5>
+                        </div>
+                        <div class="receta-body">
+                            <strong>Medicamentos:</strong>
                         <ul>
                             <?php
                                 // Obtener medicamentos para esta receta
-                                $sqlMedicamentos = "SELECT nombre FROM medicamentos WHERE idMedicamento IN 
+                                $sqlMedicamentos = "SELECT nombre, idMedicamento FROM medicamentos WHERE idMedicamento IN 
                                                     (SELECT idMedicamento FROM medicamentos_recetas WHERE idReceta = ?)";
                                 $stmtMedicamento = $conn->prepare($sqlMedicamentos);
                                 $stmtMedicamento->bind_param('i', $idReceta);
                                 $stmtMedicamento->execute();
                                 $stmtMedicamento->store_result();
-                                $stmtMedicamento->bind_result($nombreMedicamento);
+                                $stmtMedicamento->bind_result($nombreMedicamento, $idMedicamento);
                                 while ($stmtMedicamento->fetch()) {
                                     echo "<li class='medicamento-info'>$nombreMedicamento</li>";
+                                    if ($_SESSION['admin'] == true):
+                                        echo "<input type='hidden' name='nombreMedicamento' value='$nombreMedicamento'>";
+                                        echo "<input type='hidden' name='idMedicamento' value='$idMedicamento'>";
+                                    endif;
                                 }
                                 $stmtMedicamento->close();
-                            ?>
+                                ?>
                         </ul>
                         <strong>Enfermedades:</strong>
                         <ul>
                             <?php
                                 // Obtener enfermedades para esta receta
-                                $sqlEnfermedades = "SELECT nombre FROM enfermedades WHERE idEnfermedad IN 
+                                $sqlEnfermedades = "SELECT nombre, idEnfermedad FROM enfermedades WHERE idEnfermedad IN 
                                                     (SELECT idEnfermedad FROM enfermedades_recetas WHERE idReceta = ?)";
                                 $stmtEnfermedad = $conn->prepare($sqlEnfermedades);
                                 $stmtEnfermedad->bind_param('i', $idReceta);
                                 $stmtEnfermedad->execute();
                                 $stmtEnfermedad->store_result();
-                                $stmtEnfermedad->bind_result($nombreEnfermedad);
+                                $stmtEnfermedad->bind_result($nombreEnfermedad, $idEnfermedad);
                                 while ($stmtEnfermedad->fetch()) {
                                     echo "<li class='enfermedad-info'>$nombreEnfermedad</li>";
+                                    if ($_SESSION['admin'] == true):
+                                        echo "<input type='hidden' name='nombreEnfermedad' value='$nombreEnfermedad'>";
+                                        echo "<input type='hidden' name='idEnfermedad' value='$idEnfermedad'>";
+                                    endif;
                                 }
                                 $stmtEnfermedad->close();
-                            ?>
+                                ?>
                         </ul>
                         <p><strong>Periodo del Medicamento:</strong> <?= $periodoMedicamento ?></p>
                         <p><strong>Cantidad del Medicamento:</strong> <?= $cantidadMedicamento ?></p>
+                        <button type="submit" class="delete-btn">Modificar</button>
                         <?php if ($_SESSION['admin'] == true): ?>
+                        </form>
                         <form action="darBajaReceta.php" method="post" class="mt-2">
                             <input type="hidden" name="idReceta" value="<?= $idReceta ?>">
                             <button type="submit" class="delete-btn">Eliminar</button>
@@ -100,7 +123,7 @@
                 </div>
             </div>
         <?php
-            }
+            
             $stmt->close();
         ?>
         </div>
@@ -112,7 +135,8 @@
 </html>
 
 <?php
-    } else {
+    }
+     else {
         $_SESSION['mensaje'] = "Necesitas iniciar sesión";
         header('location: iniciarSesionFormulario.php');
     }

@@ -63,7 +63,7 @@
 
                     <div class="action-links mt-3">
                         <a href="verHistorialClinico.php?idPaciente=<?= $idPaciente ?>" class="btn btn-info">Historial Clínico</a>
-                        <a href="verRecetas.php?idPaciente=<?= $idPaciente ?>" class="btn btn-primary">Recetas</a>
+                        <a href="verListaRecetas.php?idPaciente=<?= $idPaciente ?>" class="btn btn-primary">Recetas</a>
                     </div>
 
                     <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>

@@ -17,7 +17,6 @@
         <div class="form-box">
             <div class="card p-4 shadow-lg">
                 <?php include('../backend/crearContraseñaFormulario.php') ?>
-
             </div>
         </div>
     </main>
