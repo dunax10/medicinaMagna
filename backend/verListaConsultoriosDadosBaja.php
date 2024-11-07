@@ -3,27 +3,25 @@
     include('mensaje.php');
     session_start();
     
-    if(isset($_SESSION['idUsuario'])) {
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
         $idUsuario = $_SESSION['idUsuario'];
 
-        // Consulta para obtener las enfermedades vigentes
-        $sql = "SELECT * FROM enfermedades WHERE vigente = 1 ORDER BY nombre ASC;";
+        $sql = "SELECT * FROM consultorios WHERE vigente = 0 ORDER BY nombre ASC;";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $stmt->store_result();
-        $stmt->bind_result($idEnfermedad, $nombre, $vigente);
-
+        $stmt->bind_result($idConsultorio, $nombre, $vigente);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Enfermedades</title>
+    <title>Lista de Empleados</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .enfermedad-card {
+        .employee-card {
             padding: 1rem;
             background-color: #f8f9fa;
             margin-bottom: 1rem;
@@ -42,23 +40,18 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Listado de Enfermedades</h1>
+        <h1 class="text-center mb-4">Listado de Empleados</h1>
         <div class="row">
         <?php
             while ($stmt->fetch()) {
         ?>
             <div class="col-md-4">
-                <div class="enfermedad-card">
-                    <strong>ID:</strong> <?= $idEnfermedad ?> <br>
-                    <strong>Nombre:</strong> <?= $nombre ?>
-                    <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
-                        <form action="../backend/modificarEnfermedadesFormulario.php" method="post" class="mt-2">
-                            <input type="hidden" name="idEnfermedad" value="<?= $idEnfermedad ?>">
-                            <input type="hidden" name="nombre" value="<?= $nombre ?>">
-                            <button type="submit" class="delete-btn">Modificar</button>
-                        </form>
-                        <form action="../backend/darBajaEnfermedad.php" method="post" class="mt-2">
-                            <input type="hidden" name="idEnfermedad" value="<?= $idEnfermedad ?>">
+                <div class="employee-card">
+                    <strong>ID:</strong> <?= $idConsultorio ?> <br>
+                    <strong>Nombre:</strong> <?= $nombre ?> <br>
+                    <?php if ($_SESSION['admin'] == true): ?>
+                        <form action="darBajaConsultorio.php" method="post" class="mt-2">
+                            <input type="hidden" name="idConsultorio" value="<?= $idConsultorio ?>">
                             <button type="submit" class="delete-btn">Eliminar</button>
                         </form>
                     <?php endif; ?>
