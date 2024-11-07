@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../scss/estiloBootstrap.css">
-    <title>Recetas | Medicina Magna</title>
+    <link rel="stylesheet" href="../../scss/estiloBootstrap.css">
+    <title>Medicamentos | Medicina Magna</title>
 </head>
-<body>
+<body class="bg-fondoClaro">
     <header class="bg-secundario ">
-        <?php include('subheader.php'); ?>
+        <?php include('header.php'); ?>
     </header>
     
     <main class="bg-fondoClaro container">
-        <?php include('../backend/verRecetas.php'); ?>
+        <?php include('../../backend/modificarMedico.php'); ?>
     </main>
     
-    <footer class="mt-5">
+    <footer>
         <?php include('footer.php'); ?>
     </footer>
 </body>

@@ -13,7 +13,7 @@
     {
         $stmt->close();
         $_SESSION['mensaje'] = "El email es incorrecto";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
     }
     else
     {
@@ -26,7 +26,7 @@
         {
             $stmt->close();
             $_SESSION['mensaje'] = "La contraseña es incorrecta";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
         }
         else
         {
@@ -48,7 +48,7 @@
             {
                 $_SESSION['medico'] = true;
             }
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
         }
     }
 ?>

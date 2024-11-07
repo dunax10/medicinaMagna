@@ -1,1 +1,0 @@
-Todos los archivos CSS que se vinculan a los archivos de "paginas"

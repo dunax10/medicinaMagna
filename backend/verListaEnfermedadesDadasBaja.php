@@ -1,8 +1,11 @@
 <?php
     include('conexion.php');
     session_start();
-    if(isset($_SESSION['idUsuario']))
+    if(!isset($_SESSION['idUsuario']))
     {
+        $_SESSION['mensaje'] = "Necesitas iniciar sesion";
+        header('location: iniciarSesionFormulario.php');
+    }
         $idUsuario = $_SESSION['idUsuario'];
 
         $sql = "SELECT * FROM enfermedades WHERE vigente = 0 ORDER BY nombre ASC;";
@@ -29,11 +32,4 @@
             echo "id $idEnfermedad nombre $nombre<br>";
         }
         $stmt->close();
-
-    }
-    else
-    {
-        $_SESSION['mensaje'] = "Necesitas iniciar sesion";
-        header('location: iniciarSesionFormulario.php');
-    }
 ?>

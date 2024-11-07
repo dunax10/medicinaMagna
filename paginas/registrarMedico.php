@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/estiloBootstrap.css">
-    <title>Recetas | Medicina Magna</title>
+    <title>Registro de medico | Medicina Magna</title>
 </head>
 <body>
     <header class="bg-secundario ">
@@ -12,7 +12,7 @@
     </header>
     
     <main class="bg-fondoClaro container">
-        <?php include('../backend/verRecetas.php'); ?>
+        <?php include('../backend/registrarMedico.php'); ?>
     </main>
     
     <footer class="mt-5">
