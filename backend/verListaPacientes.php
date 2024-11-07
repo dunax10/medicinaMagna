@@ -2,8 +2,6 @@
     include('conexion.php');
     include('mensaje.php');
     session_start();
-
-    if (isset($_SESSION['medico']) && $_SESSION['medico'] == true) {
         $idUsuario = $_SESSION['idUsuario'];
 
         $sql = "SELECT * FROM pacientes WHERE vigente = 1 ORDER BY nombre ASC;";
@@ -98,10 +96,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-<?php
-    } else {
-        $_SESSION['mensaje'] = "Necesitas iniciar sesión";
-        header('location: iniciarSesionFormulario.php');
-    }
-?>

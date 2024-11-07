@@ -1,7 +1,5 @@
 <?php
 include('mensaje.php');
-if (isset($_SESSION['admin'])) {
-    if ($_SESSION['admin'] == true) {
         include('conexion.php');
         ?>
         
@@ -102,13 +100,3 @@ if (isset($_SESSION['admin'])) {
                 });
             });
         </script>
-        <?php
-    } else {
-        $_SESSION['mensaje'] = "Debe ser admin para asociar consultorios";
-        header("location: iniciarSesionFormulario.php");
-    }
-} else {
-    $_SESSION['mensaje'] = "Debe iniciar sesion";
-    header("location: iniciarSesionFormulario.php");
-}
-?>

@@ -1,9 +1,5 @@
 <?php
     include('mensaje.php');
-    if(isset($_SESSION['medico']))
-    {
-        if($_SESSION['medico'] == true)
-        {
             ?>
 
             <!DOCTYPE html>
@@ -49,18 +45,3 @@
                 </form>
             </body>
             </html>
-
-            <?php
-        }
-        else
-        {
-            $_SESSION['mensaje'] = "Debe ser medico para registrar pacientes";
-            header("location: iniciarSesionFormulario.php");
-        }
-    }
-    else
-    {
-        $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
-    }
-?>

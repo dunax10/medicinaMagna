@@ -1,10 +1,6 @@
 <?php
     include('conexion.php');
     include('mensaje.php');
-    if(isset($_SESSION['medico']))
-    {
-        if($_SESSION['medico'] == true)
-        {
             $idUsuario = $_SESSION['idUsuario'];
 
             $sql = "SELECT * FROM pacientes WHERE vigente = 0 ORDER BY nombre ASC;";
@@ -31,12 +27,4 @@
                 echo "ID: $idPaciente NOMBRE: $nombre APELLIDO: $apellido DNI: $dni TELEFONO: $telefono DOMICILIO: $domicilio TIPO DE SANGRE: $tipoSangre SEXO: $sexo FECHA DE NACIMIENTO: $fechaNacimiento MAIL: $mail <a href='verHistorialClinico.php?idPaciente=$idPaciente'>HISTORIAL CLINICO</a>  <a href='verRecetas.php?idPaciente=$idPaciente'>RECETAS</a><br>";
             }
             $stmt->close();
-        }
-
-    }
-    else
-    {
-        $_SESSION['mensaje'] = "Necesitas iniciar sesion";
-        header('location: iniciarSesionFormulario.php');
-    }
 ?>
