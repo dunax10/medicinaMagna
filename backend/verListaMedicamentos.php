@@ -10,7 +10,7 @@
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $stmt->store_result();
-        $stmt->bind_result($idMedicina, $nombre);
+        $stmt->bind_result($idMedicina, $nombre, $vigente);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +41,17 @@
                 <div class="medicina-card">
                     <strong>ID:</strong> <?= $idMedicina ?> <br>
                     <strong>Nombre:</strong> <?= $nombre ?>
+                    <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
+                        <form action="../backend/modificarMedicamentoFormulario.php" method="post" class="mt-2">
+                            <input type="hidden" name="idMedicamento" value="<?= $idMedicina ?>">
+                            <input type="hidden" name="nombre" value="<?= $nombre ?>">
+                            <button type="submit" class="delete-btn">Modificar</button>
+                        </form>
+                        <form action="../backend/darBajaMedicamento.php" method="post" class="mt-2">
+                            <input type="hidden" name="idMedicamento" value="<?= $idMedicina ?>">
+                            <button type="submit" class="delete-btn">Eliminar</button>
+                        </form>
+                    <?php endif; ?>
                 </div>
             </div>
         <?php
