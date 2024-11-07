@@ -67,6 +67,19 @@
                     </div>
 
                     <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
+                        <form action="modificarPacienteFormulario.php" method="post" class="mt-3">
+                            <input type="hidden" name="idPaciente" value="<?= $idPaciente ?>">
+                            <input type="hidden" name="nombre" value="<?= $nombre ?>">
+                            <input type="hidden" name="apellido" value="<?= $apellido ?>">
+                            <input type="hidden" name="dni" value="<?= $dni ?>">
+                            <input type="hidden" name="telefono" value="<?= $telefono ?>">
+                            <input type="hidden" name="domicilio" value="<?= $domicilio ?>">
+                            <input type="hidden" name="tipoSangre" value="<?= $tipoSangre ?>">
+                            <input type="hidden" name="sexo" value="<?= $sexo ?>">
+                            <input type="hidden" name="fechaNacimiento" value="<?= $fechaNacimiento ?>">
+                            <input type="hidden" name="mail" value="<?= $mail ?>">
+                            <button type="submit" class="delete-btn">Modificar</button>
+                        </form>
                         <form action="darBajaPacientes.php" method="post" class="mt-3">
                             <input type="hidden" name="idPaciente" value="<?= $idPaciente ?>">
                             <button type="submit" class="delete-btn">Eliminar</button>
