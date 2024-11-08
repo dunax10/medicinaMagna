@@ -1,5 +1,9 @@
 <?php
     include('conexion.php');
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     if(!isset($_SESSION['idUsuario']))
     {
         $_SESSION['mensaje'] = "Necesitas iniciar sesion";

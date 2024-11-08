@@ -1,6 +1,6 @@
 <?php
     include('conexion.php');
-    session_start();
+
     if(isset($_SESSION['idUsuario']))
     {
         $idUsuario = $_SESSION['idUsuario'];
@@ -13,7 +13,7 @@
         //almaceno el resultado para verificar
         $stmt->store_result();
         //traigo los resultados de la consulta y la recorro con un while
-        $stmt->bind_result($idMedicamento, $nombre);
+        $stmt->bind_result($idMedicamento, $nombre, $vigente);
         while ($stmt->fetch()) 
         {
             if(isset($_SESSION['admin']))

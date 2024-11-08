@@ -16,7 +16,7 @@
             <div class="card p-4 shadow-lg">
                 <h2>Listado de Medicos dados de baja</h2>
                 <div class="input-group mb-3">
-                    <?php include('../../backend/verListaMedicosDadosBaja.php'); ?>
+                    <?php include('../../backend/verListaMedicamentosDadosBaja.php'); ?>
                 </div>
             </div>
         </div>
