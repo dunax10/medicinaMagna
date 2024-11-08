@@ -96,5 +96,5 @@
     }
 
     $_SESSION['mensaje'] = "receta modificada con éxito";
-    header("location: verListaPacientes.php");
+    header("location: ../paginas/pacientes/verListaPacientesVisual.php");
 ?>

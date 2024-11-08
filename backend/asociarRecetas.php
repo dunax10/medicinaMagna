@@ -103,7 +103,7 @@
         }
 
         $_SESSION['mensaje'] = "receta vinculada con éxito";
-        header("location: asociarRecetasFormulario.php");
+        header("location: ../paginas/pacientes/asociarRecetasVisual.php");
     }
     $stmt->close();
 ?>

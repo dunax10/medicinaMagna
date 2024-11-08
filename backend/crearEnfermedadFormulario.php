@@ -14,7 +14,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="../backend/crearEnfermedad.php" method="post">
+                <form action="../../backend/crearEnfermedad.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
                     <input type="submit" name="enviar" value="Enviar">
@@ -27,12 +27,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser medico";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../iniciarSesionVisual.php");
     }
 ?>

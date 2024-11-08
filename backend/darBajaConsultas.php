@@ -28,17 +28,17 @@
             $stmt->close();
 
             $_SESSION['mensaje'] = "consulta eliminada exitosamente";
-            header('Location: verListaConsultas.php');
+            header('Location: ../paginas/turnos/verListaConsultasVisual.php');
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header('Location: iniciarSesionFormulario.php');
+            header('Location: ../paginas/iniciarSesionVisual.php');
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header('Location: iniciarSesionFormulario.php');
+        header('Location: ../paginas/iniciarSesionVisual.php');
     }
 ?>

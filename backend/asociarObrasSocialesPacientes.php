@@ -42,9 +42,9 @@
         $stmt->close();
 
         $_SESSION['mensaje'] = "obra social vinculada con éxito";
-        header("location: asociarObrasSocialesPacientesFormulario.php");
+        header("location: ../paginas/obrasSociales/asociarObrasSocialesPacientesVisual.php");
     }
     $stmt->close();
     $_SESSION['mensaje'] = "obra social no encontrada";
-    header("location: asociarObrasSocialesPacientesFormulario.php");
+    header("location: ../paginas/obrasSociales/asociarObrasSocialesPacientesVisual.php");
 ?>

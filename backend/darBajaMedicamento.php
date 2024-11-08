@@ -28,17 +28,17 @@
             $stmt->close();
 
             $_SESSION['mensaje'] = "Medicamento eliminado exitosamente";
-            header('Location: verListaMedicamentos.php');
+            header('Location: ../paginas/medicamentos/verListaMedicamentosVisual.php');
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header('Location: iniciarSesionFormulario.php');
+            header('Location: ../paginas/iniciarSesionVisual.php');
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header('Location: iniciarSesionFormulario.php');
+        header('Location: ../paginas/iniciarSesionVisual.php');
     }
 ?>

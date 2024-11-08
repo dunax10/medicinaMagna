@@ -54,21 +54,21 @@
             else
             {
                 $_SESSION['mensaje'] = "El consultorio estaba ocupado en la fecha y hora del $fecha a las $hora";
-                header("location: asociarConsultaFormulario.php");
+                header("location: ../paginas/turnos/asociarConsultaFormularioVisual.php");
                 exit();
             }
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
             exit();
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
         exit();
     }
 ?>

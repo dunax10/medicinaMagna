@@ -103,7 +103,7 @@
 
         $_SESSION['mensaje'] = "historial vinculado con éxito";
         $stmt->close();
-        header("location: asociarHistoriasClinicasFormulario.php");
+        header("location: ../paginas/historiasClinicas/asociarHistoriasClinicasVisual.php");
     }
     $stmt->close();
 ?>

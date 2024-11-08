@@ -28,17 +28,17 @@
             $stmt->close();
 
             $_SESSION['mensaje'] = "Enfermedad restaurada exitosamente";
-            header('Location: verListaEnfermedadesDadasBaja.php');
+            header('Location: ../paginas/enfermedades/verListaEnfermedadesDadasBajaVisual.php');
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header('Location: iniciarSesionFormulario.php');
+            header('Location: ../paginas/iniciarSesionVisual.php');
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header('Location: iniciarSesionFormulario.php');
+        header('Location: ../paginas/iniciarSesionVisual.php');
     }
 ?>

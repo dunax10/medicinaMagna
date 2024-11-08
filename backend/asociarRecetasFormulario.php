@@ -20,7 +20,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="../backend/asociarRecetas.php" method="post">
+                <form action="../../backend/asociarRecetas.php" method="post">
                     <label>Seleccione un paciente:</label>
                     <select id='BuscarPacientes' style='width: 200px;' lang="es" name="idPaciente" required>
                         <option value='0'>- Buscar pacientes -</option>
@@ -63,12 +63,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser medico para crear historiales clinicos";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../iniciarSesionVisual.php");
     }
 ?>

@@ -4,7 +4,7 @@
     if(!isset($_SESSION['idUsuario']))
     {
         $_SESSION['mensaje'] = "Necesitas iniciar sesion";
-        header('location: iniciarSesionFormulario.php');
+        header('location: ../iniciarSesionVisual.php');
     }
         $idUsuario = $_SESSION['idUsuario'];
 
@@ -23,7 +23,7 @@
             {
                 if($_SESSION['admin'] == true)
                 {
-                        echo "<form action='../backend/restaurarEnfermedad.php' method='post'>
+                        echo "<form action='../../backend/restaurarEnfermedad.php' method='post'>
                             <input type='hidden' name='idEnfermedad' value='$idEnfermedad'>
                             <input type='submit' value='X'>
                         </form>";

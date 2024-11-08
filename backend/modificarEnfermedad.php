@@ -30,4 +30,4 @@
     $stmt->close();
 
     $_SESSION['mensaje'] = "Enfermedad modificada exitosamente";
-    header('Location: verListaEnfermedades.php');
+    header('Location: ../paginas/enfermedades/verListaEnfermedadesVisual.php');

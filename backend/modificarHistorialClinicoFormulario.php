@@ -74,12 +74,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser medico para crear historiales clinicos";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/inciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/inciarSesionVisual.php");
     }
 ?>

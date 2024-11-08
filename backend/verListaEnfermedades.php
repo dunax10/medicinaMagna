@@ -52,12 +52,12 @@
                     <strong>ID:</strong> <?= $idEnfermedad ?> <br>
                     <strong>Nombre:</strong> <?= $nombre ?>
                     <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
-                        <form action="../backend/modificarEnfermedadesFormulario.php" method="post" class="mt-2">
+                        <form action="../../backend/modificarEnfermedadesFormulario.php" method="post" class="mt-2">
                             <input type="hidden" name="idEnfermedad" value="<?= $idEnfermedad ?>">
                             <input type="hidden" name="nombre" value="<?= $nombre ?>">
                             <button type="submit" class="delete-btn">Modificar</button>
                         </form>
-                        <form action="../backend/darBajaEnfermedad.php" method="post" class="mt-2">
+                        <form action="../../backend/darBajaEnfermedad.php" method="post" class="mt-2">
                             <input type="hidden" name="idEnfermedad" value="<?= $idEnfermedad ?>">
                             <button type="submit" class="delete-btn">Eliminar</button>
                         </form>
@@ -79,6 +79,6 @@
 <?php
     } else {
         $_SESSION['mensaje'] = "Necesitas iniciar sesión";
-        header('location: iniciarSesionFormulario.php');
+        header('location: ../iniciarSesionVisual.php');
     }
 ?>

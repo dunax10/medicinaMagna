@@ -95,5 +95,5 @@
     }
 
     $_SESSION['mensaje'] = "historial modificado con éxito";
-    header("location: verListaPacientes.php");
+    header("location: ../paginas/pacientes/verListaPacientesVisual.php");
 ?>

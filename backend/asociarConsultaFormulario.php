@@ -16,7 +16,7 @@ include('mensaje.php');
             <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
         </head>
         <body>
-            <form action="../backend/asociarConsulta.php" method="post">
+            <form action="../../backend/asociarConsulta.php" method="post">
                 <label>Seleccione un medico:</label>
                 <select id='BuscarMedicos' style='width: 200px;' lang="es" name="idMedico" required>
                     <option value='0'>- Buscar medicos -</option>

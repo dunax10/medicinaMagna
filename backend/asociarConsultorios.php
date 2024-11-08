@@ -20,7 +20,7 @@
                 if (!$hora1_objeto || $erroresHora1['warning_count'] > 0 || $erroresHora1['error_count'] > 0) 
                 {
                     $_SESSION['mensaje'] = "Debe ingresar una hora válida de ingreso";
-                    header("location: asociarConsultoriosFormulario.php");
+                    header("location: ../paginas/../paginas/consultorios/conVisualasociarConsultoriosVisual.php");
                     exit();
                 }
             
@@ -28,7 +28,7 @@
                 if (!$hora2_objeto || $erroresHora2['warning_count'] > 0 || $erroresHora2['error_count'] > 0) 
                 {
                     $_SESSION['mensaje'] = "Debe ingresar una hora válida de egreso";
-                    header("location: asociarConsultoriosFormulario.php");
+                    header("location: ../paginas/../paginas/consultorios/conVisualasociarConsultoriosVisual.php");
                     exit();
                 }
             
@@ -36,7 +36,7 @@
                 if ($hora1_objeto >= $hora2_objeto) 
                 {
                     $_SESSION['mensaje'] = "La hora de ingreso no puede ser mayor o igual a la hora de egreso.";
-                    header("location: asociarConsultoriosFormulario.php");
+                    header("location: ../paginas/../paginas/consultorios/conVisualasociarConsultoriosVisual.php");
                     exit();
                 }
             }
@@ -66,27 +66,27 @@
                 $stmt->bind_param('sssss', $idConsultorio, $idMedico, $fecha, $horaIngreso, $horaEgreso);
                 $stmt->execute();
                 $_SESSION['mensaje'] = "El consultorio fue asociado con éxito";
-                header("location: asociarConsultoriosFormulario.php");
+                header("location: ../paginas/consultorios/asociarConsultoriosVisual.php");
                 exit();
             }
             else
             {
                 $_SESSION['mensaje'] = "El consultorio estaba ocupado en la fecha y hora del $fecha entre las $horaIngreso y las $horaEgreso";
-                header("location: asociarConsultoriosFormulario.php");
+                header("location: ../paginas/consultorios/asociarConsultoriosVisual.php");
                 exit();
             }
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
             exit();
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
         exit();
     }
 ?>

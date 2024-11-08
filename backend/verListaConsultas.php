@@ -45,7 +45,7 @@
                     <strong>Fecha:</strong> <?= $fecha ?> <br>
                     <strong>Hora:</strong> <?= $hora ?> <br>
                     <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
-                        <form action="../backend/darBajaConsultas.php" method="post" class="mt-2">
+                        <form action="../../backend/darBajaConsultas.php" method="post" class="mt-2">
                             <input type="hidden" name="idConsulta" value="<?= $idConsulta ?>">
                             <button type="submit" class="delete-btn">Eliminar</button>
                         </form>
@@ -67,6 +67,6 @@
 <?php
     } else {
         $_SESSION['mensaje'] = "Necesitas iniciar sesión";
-        header('location: iniciarSesionFormulario.php');
+        header('location: ../iniciarSesionVisual.php');
     }
 ?>

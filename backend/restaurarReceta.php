@@ -35,17 +35,17 @@
             $stmt->close();
 
             $_SESSION['mensaje'] = "Receta restaurada exitosamente";
-            header('Location: verListaRecetas.php');
+            header('Location: ../paginas/pacientes/verListaRecetasVisual.php');
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header('Location: iniciarSesionFormulario.php');
+            header('Location: ../paginas/iniciarSesionVisual.php');
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header('Location: iniciarSesionFormulario.php');
+        header('Location: ../paginas/iniciarSesionVisual.php');
     }
 ?>

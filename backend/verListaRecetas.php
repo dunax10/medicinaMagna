@@ -155,6 +155,6 @@
 <?php
     } else {
         $_SESSION['mensaje'] = "Necesitas iniciar sesión";
-        header('location: iniciarSesionFormulario.php');
+        header('location: ../paginas/iniciarSesionVisual.php');
     }
 ?>
