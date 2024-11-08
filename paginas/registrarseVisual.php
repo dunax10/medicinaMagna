@@ -8,7 +8,7 @@
 </head>
 <body class="bg-fondoClaro">
     <header class="bg-fondoClaro" style="margin-left:10px">
-        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+        <a class="navbar-brand d-flex align-items-center" href="../index.php">
             <img src="../imagenes/logosinnombre.png" alt="Logo" width="50" height="40">
             <span class="text-fondoOscuro fs-5 d-none d-lg-inline">MedicinaMagna</span>
         </a>

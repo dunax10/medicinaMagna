@@ -10,7 +10,7 @@
     <!-- Header -->
     <header class="bg-fondoClaro py-3 w-100">
         <div class="container-fluid d-flexs">
-            <a class="navbar-brand d-flex" href="../index.html">
+            <a class="navbar-brand d-flex" href="../index.php">
                 <img src="../imagenes/logosinnombre.png" alt="Logo" width="50" height="40">
                 <span class="text-fondoOscuro ms-2 fs-5 d-none d-lg-inline">Medicina Magna</span>
             </a>

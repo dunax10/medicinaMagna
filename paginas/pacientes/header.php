@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,9 +29,15 @@
                     
 
                         <!-- Botón de iniciar sesión, visible en ambas versiones -->
-                        <li class="nav-item ms-3">
-                            <a href="IniciarSesionVisual.php" class="btn btn-primary">Iniciar Sesión</a>
-                        </li>
+                        <?php if(!isset($_SESSION['idUsuario'])){ ?>
+                            <li class="nav-item ms-3">
+                                <a href="../IniciarSesionVisual.php" class="btn btn-primary">Iniciar Sesión</a>
+                            </li>
+                        <?php }else{ ?>
+                            <li class="nav-item ms-3">
+                                <a href="../../backend/cerrarSesion.php" class="btn btn-primary">Cerrar Sesión</a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>

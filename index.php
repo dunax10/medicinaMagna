@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,7 +18,7 @@
         <nav class="navbar navbar-expand-lg bg-secundario">
             <div class="container">
                 <!-- Logo visible en todas las pantallas; nombre visible solo en pantallas grandes -->
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <a class="navbar-brand d-flex align-items-center" href="index.php">
                     <img src="imagenes/logosinnombre.png" alt="Logo" width="50" height="40">
                     <span class="text-fondoOscuro ms-2 fs-5 d-none d-lg-inline">MedicinaMagna</span>
                 </a>
@@ -32,9 +33,15 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
                         <!-- Botón de iniciar sesión -->
-                        <li class="nav-item ms-3">
-                            <a href="paginas/IniciarSesionVisual.php" class="btn btn-terciario">Iniciar Sesión</a>
-                        </li>
+                        <?php if(!isset($_SESSION['idUsuario'])){ ?>
+                            <li class="nav-item ms-3">
+                                <a href="paginas/IniciarSesionVisual.php" class="btn btn-primary">Iniciar Sesión</a>
+                            </li>
+                        <?php }else{ ?>
+                            <li class="nav-item ms-3">
+                                <a href="../backend/cerrarSesion.php" class="btn btn-primary">Cerrar Sesión</a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
