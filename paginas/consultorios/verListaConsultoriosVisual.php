@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../scss/estiloBootstrap.css">
-    <title>Listado de Medicos dados de baja | Medicina Magna</title>
+    <title>Lista de Consultorios | Medicina Magna</title>
 </head>
 <body class="bg-fondoClaro"></body>
-    <header class="bg-secundario ">
+    <header class="bg-secundario mb-3">
         <?php include('header.php'); ?>
     </header>
-
-    <main class="bg-fondoClaro flex-grow-1 d-flex justify-content-center align-items-center w-100">
-        <div class="form-box mt-4">
+    
+    <main class="bg-fondoClaro container p-3 my-5">
+    <div class="form-box my-4">
             <div class="card p-4 shadow-lg">
-                <h2>Listado de Medicos dados de baja</h2>
-                <div class="input-group mb-3">
-                    <?php include('../../backend/verListaMedicosDadosBaja.php'); ?>
+                <div class="input-group mb-4">
+                    <?php include('../../backend/verListaConsultorios.php'); ?>
                 </div>
             </div>
         </div>
     </main>
     
-    <footer>
+    <footer class="mt-4">
         <?php include('footer.php'); ?>
     </footer>
 </body>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../scss/estiloBootstrap.css">
-    <title>Listado de Medicos dados de baja | Medicina Magna</title>
+    <title>Listado de Consultorios dados de baja | Medicina Magna</title>
 </head>
 <body class="bg-fondoClaro"></body>
     <header class="bg-secundario ">
@@ -14,9 +14,9 @@
     <main class="bg-fondoClaro flex-grow-1 d-flex justify-content-center align-items-center w-100">
         <div class="form-box mt-4">
             <div class="card p-4 shadow-lg">
-                <h2>Listado de Medicos dados de baja</h2>
+                <h2>Listado de Consultorios dados de baja</h2>
                 <div class="input-group mb-3">
-                    <?php include('../../backend/verListaMedicosDadosBaja.php'); ?>
+                    <?php include('../../backend/verListaConsultoriosDadosBaja.php'); ?>
                 </div>
             </div>
         </div>

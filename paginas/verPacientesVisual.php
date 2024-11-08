@@ -26,7 +26,7 @@
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow-lg pt-5" style="min-height: 300px;">
                     <div class="card-body pt-5">
-                        <h4 class="card-title">Listado de Pacientess</h4>
+                        <h4 class="card-title">Listado de Pacientes</h4>
                         <p class="card-text">Consulta el listado de Pacientes registrados.</p>
                         <a href="pacientes/verListaPacientesVisual.php" class="btn btn-primary">Ver Listado</a>
                     </div>

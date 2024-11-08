@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/estiloBootstrap.css">
-    <title>Medicos | Medicina Magna</title>
+    <title>Turnos | Medicina Magna</title>
 </head>
 <body class="bg-fondoClaro">
     <header class="bg-secundario mb-3">
@@ -16,9 +16,9 @@
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow-lg pt-5" style="min-height: 350;">
                     <div class="card-body pt-5">
-                        <h4 class="card-title">Registrar Medico</h4>
-                        <p class="card-text">Añade un nuevo medico a la base de datos.</p>
-                        <a href="medicos/registrarMedicoVisual.php" class="btn btn-primary">Ir al Registro</a>
+                        <h4 class="card-title">Registrar Turno</h4>
+                        <p class="card-text">Añade un nuevo Turno a la base de datos.</p>
+                        <a href="turnos/registrarTurnoVisual.php" class="btn btn-primary">Ir al Registro</a>
                     </div>
                 </div>
             </div>
@@ -26,9 +26,9 @@
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow-lg pt-5" style="min-height: 300px;">
                     <div class="card-body pt-5">
-                        <h4 class="card-title">Listado de Medicos</h4>
-                        <p class="card-text">Consulta el listado de Medicos registradas.</p>
-                        <a href="medicos/verListaMedicosVisual.php" class="btn btn-primary">Ver Listado</a>
+                        <h4 class="card-title">Listado de Turnos</h4>
+                        <p class="card-text">Consulta el listado de Turnos registradas.</p>
+                        <a href="turnos/verListaTurnosVisual.php" class="btn btn-primary">Ver Listado</a>
                     </div>
                 </div>
             </div>
@@ -36,9 +36,9 @@
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow-lg pt-5" style="min-height: 300px;">
                     <div class="card-body pt-5">
-                        <h4 class="card-title">Listado de Medicos dados de baja</h4>
-                        <p class="card-text">Consulta el listado de Medicos eliminados.</p>
-                        <a href="medicos/verListaMedicosDadosBajaVisual.php" class="btn btn-primary">Ver listado</a>
+                        <h4 class="card-title">Listado de Turnos dados de baja</h4>
+                        <p class="card-text">Consulta el listado de Turnos eliminados.</p>
+                        <a href="turnos/verListaTurnosDadosBajaVisual.php" class="btn btn-primary">Ver listado</a>
                     </div>
                 </div>
             </div>

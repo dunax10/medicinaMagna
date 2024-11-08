@@ -88,7 +88,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Obras Sociales</h5>
                             <p class="card-text">Consulta de obras sociales</p>
-                            <a href="paginas/verListaObrasSocialesVisual.php" class="btn btn-primario">Ver</a>
+                            <a href="paginas/verObrasSocialesVisual.php" class="btn btn-primario">Ver</a>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Medicamentos</h5>
                             <p class="card-text">Registro de medicamentos</p>
-                            <a href="paginas/verListaMedicamentosVisual.php" class="btn btn-primario">Ver</a>
+                            <a href="paginas/verMedicamentosVisual.php" class="btn btn-primario">Ver</a>
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Enfermedades</h5>
                             <p class="card-text">Listado de enfermedades</p>
-                            <a href="paginas/verListaEnfermedadesVisual.php" class="btn btn-primario">Ver</a>
+                            <a href="paginas/verEnfermedadesVisual.php" class="btn btn-primario">Ver</a>
                         </div>
                     </div>
                 </div>

@@ -18,7 +18,7 @@
                     <div class="card-body pt-5">
                         <h4 class="card-title">Registrar Obra Social</h4>
                         <p class="card-text">Añade una nueva obra social a la base de datos.</p>
-                        <a href="ObraSociales/registrarObraSocialVisual.php" class="btn btn-primary">Ir al Registro</a>
+                        <a href="ObraSociales/agregarObraSocialVisual.php" class="btn btn-primary">Ir al Registro</a>
                     </div>
                 </div>
             </div>
