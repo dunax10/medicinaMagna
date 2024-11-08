@@ -43,7 +43,7 @@
 
                     $("#BuscarPacientes").select2({
                         ajax: {
-                            url: "BuscarPacientes.php",
+                            url: "../../backend/BuscarPacientes.php",
                             type: "post",
                             dataType: 'json',
                             delay: 250,
@@ -72,7 +72,7 @@
 
                     $("#BuscarObrasSociales").select2({
                         ajax: {
-                            url: "BuscarObrasSociales.php",
+                            url: "../../backend/BuscarObrasSociales.php",
                             type: "post",
                             dataType: 'json',
                             delay: 250,

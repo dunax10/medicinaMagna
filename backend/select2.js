@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $("#BuscarPacientes").select2({
             ajax: {
-                url: "buscarPacientes.php",
+                url: "../../backend/buscarPacientes.php",
                 type: "post",
                 dataType: 'json',
                 delay: 250,
@@ -31,7 +31,7 @@ $(document).ready(function(){
 
     $("#BuscarMedicamentos").select2({
     ajax: {
-        url: "buscarMedicamentos.php",
+        url: "../../backend/buscarMedicamentos.php",
         type: "post",
         dataType: 'json',
         delay: 250,
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
     $("#BuscarEnfermedades").select2({
     ajax: {
-        url: "buscarEnfermedades.php",
+        url: "../../backend/buscarEnfermedades.php",
         type: "post",
         dataType: 'json',
         delay: 250,

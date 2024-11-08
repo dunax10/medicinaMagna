@@ -46,7 +46,7 @@
                 </form>
             </body>
             </html>
-            <script src="select2.js"></script>
+            <script src="../../backend/select2.js"></script>
             <script>
                 $(document).ready(function(){
                     $("form").submit(function(e) {
