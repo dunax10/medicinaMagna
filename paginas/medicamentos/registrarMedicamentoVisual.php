@@ -16,7 +16,7 @@
             <div class="card p-4 shadow-lg">
                 <h2 class="p-3">Registrar Medico</h2>
                 <div class="input-group mb-3">
-                    <?php include('../../backend/registrarMedicoFormulario.php'); ?>
+                    <?php include('../../backend/crearMedicamentoFormulario.php'); ?>
                 </div>
             </div>
         </div>

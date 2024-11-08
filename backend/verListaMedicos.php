@@ -27,7 +27,7 @@
         <?php
             while ($stmt->fetch()) {
         ?>
-            <div class="medico-card">
+            <div class="border p-3 m-5">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
                         <strong>ID:</strong> <?= $idMedico ?> <br>
@@ -54,7 +54,7 @@
                         </form>
                         <form action="../../backend/darBajaMedico.php" method="post">
                             <input type="hidden" name="idMedico" value="<?= $idMedico ?>">
-                            <button type="submit" class="btn btn-terciario">Eliminar</button>
+                            <button type="submit" class="btn btn-rojo">Eliminar</button>
                         </form>
                     <?php } ?>
                 </div>
