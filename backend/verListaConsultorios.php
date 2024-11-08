@@ -26,7 +26,7 @@
         <?php
             while ($stmt->fetch()) {
         ?>
-            <div class="col-md-4">
+            <div class="col-md-4 border p-3 m-3">
                 <div class="employee-card">
                     <strong>ID:</strong> <?= $idConsultorio ?> <br>
                     <strong>Nombre:</strong> <?= $nombre ?> <br>
@@ -34,11 +34,11 @@
                         <form action="../../backend/modificarConsultorioFormulario.php" method="post" class="mt-2">
                             <input type="hidden" name="idConsultorio" value="<?= $idConsultorio ?>">
                             <input type="hidden" name="nombre" value="<?= $nombre ?>">
-                            <button type="submit" class="delete-btn">Modificar</button>
+                            <button type="submit" class="btn btn-terciario">Modificar</button>
                         </form>
                         <form action="../../backend/darBajaConsultorio.php" method="post" class="mt-2">
                             <input type="hidden" name="idConsultorio" value="<?= $idConsultorio ?>">
-                            <button type="submit" class="delete-btn">Eliminar</button>
+                            <button type="submit" class="btn btn-rojo">Eliminar</button>
                         </form>
                     <?php endif; ?>
                 </div>

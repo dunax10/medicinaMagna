@@ -37,18 +37,18 @@
             while ($stmt->fetch()) {
         ?>
             <div class="col-md-4">
-                <div class="medicina-card">
+                <div class="border p-3 m-3">
                     <strong>ID:</strong> <?= $idMedicina ?> <br>
                     <strong>Nombre:</strong> <?= $nombre ?>
                     <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
                         <form action="../../backend/modificarMedicamentoFormulario.php" method="post" class="mt-2">
                             <input type="hidden" name="idMedicamento" value="<?= $idMedicina ?>">
                             <input type="hidden" name="nombre" value="<?= $nombre ?>">
-                            <button type="submit" class="delete-btn">Modificar</button>
+                            <button type="submit" class="btn btn-terciario">Modificar</button>
                         </form>
                         <form action="../../backend/darBajaMedicamento.php" method="post" class="mt-2">
                             <input type="hidden" name="idMedicamento" value="<?= $idMedicina ?>">
-                            <button type="submit" class="delete-btn">Eliminar</button>
+                            <button type="submit" class="btn btn-rojo">Eliminar</button>
                         </form>
                     <?php endif; ?>
                 </div>

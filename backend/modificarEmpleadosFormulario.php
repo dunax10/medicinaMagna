@@ -24,7 +24,7 @@
                     <input type="hidden" name="idEmpleado" value="<?= $idEmpleado ?>">
                     <label>Email:</label>
                     <input type="email" name="mail" placeholder="<?= $mail ?>" value="<?= $mail ?>" required><br>
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" name="enviar" class="btn btn-terciario"value="Enviar">
                 </form>
             </body>
             </html>

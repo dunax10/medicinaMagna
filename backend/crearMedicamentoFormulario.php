@@ -16,8 +16,8 @@
             <body>
                 <form action="../../backend/crearMedicamento.php" method="post">
                     <label>Nombre:</label>
-                    <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="text" name="nombre" class="form-control" placeholder="Ingrese el nombre" required><br>
+                    <input type="submit" name="enviar" class="btn btn-terciario" value="Enviar">
                 </form>
             </body>
             </html>

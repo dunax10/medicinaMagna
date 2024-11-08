@@ -34,7 +34,7 @@
                         <option value='0'>- Buscar obras sociales -</option>
                     </select><br>
 
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" name="enviar" class="btn btn-terciario" value="Enviar">
                 </form>
             </body>
             </html>
