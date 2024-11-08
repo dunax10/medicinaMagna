@@ -15,7 +15,7 @@
         <div class="form-box my-4 p-4">
             <div class="card p-4 shadow-lg">
                 <h2 class="p-3">Agregar Obra Social</h2>
-                <?php include('../../backend/agregarObrasSocialFormulario.php'); ?>
+                <?php include('../../backend/agregarObrasSocialesFormulario.php'); ?>
             </div>
         </div>
     </main>

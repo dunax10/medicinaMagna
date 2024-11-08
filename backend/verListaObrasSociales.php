@@ -54,13 +54,13 @@
                         <strong>Nombre:</strong> <?= $nombre ?> <br>
                         <strong>Teléfono:</strong> <?= $telefono ?>
                     </div>
-                    <form action="../backend/modificarObraSocialFormulario.php" method="post">
+                    <form action="../../backend/modificarObraSocialFormulario.php" method="post">
                         <input type="hidden" name="idObraSocial" value="<?= $idObraSocial ?>">
                         <input type="hidden" name="nombre" value="<?= $nombre ?>">
                         <input type="hidden" name="telefono" value="<?= $telefono ?>">
                         <button type="submit" class="btn btn-delete">Modificar</button>
                     </form>
-                    <form action="../backend/darBajaObraSocial.php" method="post">
+                    <form action="../../backend/darBajaObraSocial.php" method="post">
                         <input type="hidden" name="idObraSocial" value="<?= $idObraSocial ?>">
                         <button type="submit" class="btn btn-delete">Eliminar</button>
                     </form>
@@ -81,6 +81,6 @@
         }
     } else {
         $_SESSION['mensaje'] = "Necesitas iniciar sesión";
-        header('location: iniciarSesionFormulario.php');
+        header('location: ../iniciarSesionVisual.php');
     }
 ?>

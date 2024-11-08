@@ -14,7 +14,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="../backend/agregarObrasSociales.php" method="post">
+                <form action="../../backend/agregarObrasSociales.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
                     <label>Telefono:</label>
@@ -29,12 +29,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../iniciarSesionVisual.php");
     }
 ?>

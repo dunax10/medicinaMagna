@@ -18,7 +18,7 @@
                     <div class="card-body pt-5">
                         <h4 class="card-title">Registrar Obra Social</h4>
                         <p class="card-text">Añade una nueva obra social a la base de datos.</p>
-                        <a href="ObraSociales/agregarObraSocialVisual.php" class="btn btn-primary">Ir al Registro</a>
+                        <a href="ObrasSociales/registrarObraSocialVisual.php" class="btn btn-primary">Ir al Registro</a>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                     <div class="card-body pt-5">
                         <h4 class="card-title">Listado de Obras Sociales</h4>
                         <p class="card-text">Consulta el listado de obras sociales registradas.</p>
-                        <a href="ObraSociales/verListaObraSocialesVisual.php" class="btn btn-primary">Ver Listado</a>
+                        <a href="ObrasSociales/verListaObraSocialesVisual.php" class="btn btn-primary">Ver Listado</a>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <div class="card-body pt-5">
                         <h4 class="card-title">Listado de Obras Sociales dados de baja</h4>
                         <p class="card-text">Consulta el listado de obras sociales eliminadas.</p>
-                        <a href="ObraSociales/verListaObraSocialesDadosBajaVisual.php" class="btn btn-primary">Ver listado</a>
+                        <a href="ObrasSociales/verListaObraSocialesDadosBajaVisual.php" class="btn btn-primary">Ver listado</a>
                     </div>
                 </div>
             </div>

@@ -31,4 +31,4 @@
     $stmt->close();
 
     $_SESSION['mensaje'] = "obra social modificada exitosamente";
-    header('Location: verListaObrasSociales.php');
+    header('Location: ../paginas/obrasSociales/verListaObrasSocialesVisual.php');

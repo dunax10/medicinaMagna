@@ -33,12 +33,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser admin";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
     }
 ?>

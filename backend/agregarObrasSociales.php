@@ -21,23 +21,23 @@
                 $stmt->bind_param('ss', $nombre, $telefono);
                 $stmt->execute();
                 $_SESSION['mensaje'] = "La obra social fue creada con éxito";
-                header("location: agregarObrasSocialesFormulario.php");
+                header("location: ../paginas/obrasSociales/registrarObrasocialVisual.php");
             }
             else
             {
                 $_SESSION['mensaje'] = "La obra social $nombre ya existía";
-                header("location: agregarObrasSocialesFormulario.php");
+                header("location: ../paginas/obrasSociales/registrarObrasocialVisual.php");
             }
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
     }
 ?>

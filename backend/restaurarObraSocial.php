@@ -28,17 +28,17 @@
             $stmt->close();
 
             $_SESSION['mensaje'] = "Obra social restaurada exitosamente";
-            header('Location: verListaObrasSocialesDadasBaja.php');
+            header('Location: ../paginas/obrasSociales/verListaObraSocialesDadosBajaVisual.php');
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header('Location: iniciarSesionFormulario.php');
+            header('Location: ../paginas/iniciarSesionVisual.php');
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header('Location: iniciarSesionFormulario.php');
+        header('Location: ../paginas/iniciarSesionVisual.php');
     }
 ?>
