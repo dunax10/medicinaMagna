@@ -10,38 +10,56 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="registrarPaciente.php" method="post">
-                    <label>Nombre:</label>
-                    <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
-                    <label>Apellido:</label>
-                    <input type="text" name="apellido" placeholder="Ingrese el apellido" required><br>
-                    <label>Sexo:</label>
-                    <select name="sexo" required>
-                        <option value="F">Mujer</option>
-                        <option value="M">Hombre</option>
-                    </select><br>
-                    <label>Tipo de sangre:</label>
-                    <select name="tipoSangre" required>
-                        <option value="A+">A+</option>
-                        <option value="B+">B+</option>
-                        <option value="O+">O+</option>
-                        <option value="AB+">AB+</option>
-                        <option value="A-">A-</option>
-                        <option value="B-">B-</option>
-                        <option value="O-">O-</option>
-                        <option value="AB-">AB-</option>
-                    </select><br>
-                    <label>DNI:</label>
-                    <input type="number" name="dni" placeholder="Ingrese el dni" required><br>
-                    <label>Telefono:</label>
-                    <input type="text" name="telefono" placeholder="Ingrese el telefono"><br>
-                    <label>Domicilio:</label>
-                    <input type="text" name="domicilio" placeholder="Ingrese el domilicio"><br>
-                    <label>Fecha de Nacimiento:</label>
-                    <input type="date" name="fechaNacimiento" required><br>
-                    <label>Email:</label>
-                    <input type="email" name="email" placeholder="Ingrese el email" required><br>
-                    <input type="submit" name="enviar" value="Enviar">
-                </form>
+            <form action="registrarPaciente.php" method="post" class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Nombre:</label>
+                        <input type="text" class="form-control mb-3" name="nombre" placeholder="Ingrese el nombre" required>
+
+                        <label>Apellido:</label>
+                        <input type="text" class="form-control mb-3" name="apellido" placeholder="Ingrese el apellido" required>
+
+                        <label>Sexo:</label>
+                        <select name="sexo" class="form-control mb-3" required>
+                            <option value="F">Mujer</option>
+                            <option value="M">Hombre</option>
+                        </select>
+
+                        <label>Tipo de sangre:</label>
+                        <select name="tipoSangre" class="form-control mb-3" required>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="O+">O+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="A-">A-</option>
+                            <option value="B-">B-</option>
+                            <option value="O-">O-</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>DNI:</label>
+                        <input type="number" class="form-control mb-3" name="dni" placeholder="Ingrese el DNI" required>
+
+                        <label>Teléfono:</label>
+                        <input type="text" class="form-control mb-3" name="telefono" placeholder="Ingrese el teléfono">
+
+                        <label>Domicilio:</label>
+                        <input type="text" class="form-control mb-3" name="domicilio" placeholder="Ingrese el domicilio">
+
+                        <label>Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control mb-3" name="fechaNacimiento" required>
+
+                        <label>Email:</label>
+                        <input type="email" class="form-control mb-3" name="email" placeholder="Ingrese el email" required>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <input type="submit" class="btn btn-primary" name="enviar" value="Enviar">
+                </div>
+            </form>
+
             </body>
             </html>

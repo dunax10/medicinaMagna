@@ -101,7 +101,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Consultorios</h5>
                             <p class="card-text">Consultoría online</p>
-                            <a href="paginas/buscarConsultoriosVisual.php" class="btn btn-primario">Ver</a>
+                            <a href="paginas/VerConsultoriosVisual.php" class="btn btn-primario">Ver</a>
                         </div>
                     </div>
                 </div>
