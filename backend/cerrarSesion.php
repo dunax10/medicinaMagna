@@ -9,6 +9,6 @@ session_unset();
 session_destroy();
 
 // Redirige al usuario a la página de inicio de sesión u otra página
-header("Location: ../paginas/index.php");
+header("Location: ../index.php");
 exit();
 ?>
