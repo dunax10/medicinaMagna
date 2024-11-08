@@ -7,10 +7,10 @@
     <title>footer</title>
 </head>
 <body>
-<footer class="bg-fondoOscuro text-light py-4">
+<footer class="bg-fondoOscuro text-light py-4 mt-5">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-                <img src="../imagenes/logo magno systems.png" alt="Logo Magno Systems" width="90" height="90">
+                <img src="../../imagenes/logo magno systems.png" alt="Logo Magno Systems" width="80" height="80">
                 <span class="ms-3">© 2024 MagnoSystems</span>
             </div>
             <ul class="list-unstyled d-flex mb-0">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/estiloBootstrap.css">
-    <title>Pacientess | Medicina Magna</title>
+    <title>Pacientes | Medicina Magna</title>
 </head>
 <body class="bg-fondoClaro">
     <header class="bg-secundario mb-3">

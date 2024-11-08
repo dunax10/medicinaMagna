@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Listado de Empleados</h1>
+        <h1 class="text-center mb-4">Lista de Consultorios</h1>
         <div class="row">
         <?php
             while ($stmt->fetch()) {
@@ -49,9 +49,6 @@
         ?>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

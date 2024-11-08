@@ -28,7 +28,7 @@
                     <div class="card-body pt-5">
                         <h4 class="card-title">Listado de Recetas</h4>
                         <p class="card-text">Consulta el listado de Recetas registradas.</p>
-                        <a href="recetas/verListaRecetasVisual.php" class="btn btn-primary">Ver Listado</a>
+                        <a href="../../pacientes/verListaPacientesVisual.php" class="btn btn-primary">Ver Listado</a>
                     </div>
                 </div>
             </div>

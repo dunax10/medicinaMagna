@@ -8,12 +8,13 @@
     <title>Medicina Magna</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="scss/estiloBootstrap.css">
+    <link rel="stylesheet" href="css/estiloIndex.css">
     <style>html, body {
         height: 100%; /* Asegura que el html y body ocupen el 100% de la altura */
         margin: 0; }
     </style>
 </head>
-<body>
+<body class="bg-fondoClaro">
     <header class="bg-secundario">
         <nav class="navbar navbar-expand-lg bg-secundario">
             <div class="container">
@@ -48,6 +49,32 @@
         </nav>
     </header>
 
+    <?php
+    if(!isset($_SESSION['idUsuario'])){ ?>
+    <main class="bg-secundario py-5">
+    <!-- Video en bucle con overlay de texto -->
+    <section class="video-section">
+        <video autoplay muted loop class="background-video">
+            <source src="imagenes/fondobucle.mp4" type="video/mp4">
+            <!-- Cambia "ruta-del-video.mp4" por la ruta real del video -->
+            Tu navegador no soporta la reproducción de videos en HTML5.
+        </video>
+        <div class="overlay-text">
+            <div class="carousel">
+                <p class="carousel-item active">Bienvenido a Medicina Magna</p>
+                <p class="carousel-item">Cuidado y Salud de Calidad</p>
+                <p class="carousel-item">Descubre Nuestros Servicios</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido original de las tarjetas de servicios -->
+    <div class="container text-center mt-4">
+        <!-- Tarjetas de Servicios (mantenlas tal como están en tu código original) -->
+    </div>
+</main>
+
+    <?php } else {?>
     <main class="bg-fondoClaro py-4">
         <div class="container text-center">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
@@ -151,12 +178,12 @@
             </div>
         </div>
     </main>
-
+    <?php } ?>
     <!-- Footer -->
-    <footer class="bg-fondoOscuro text-light py-4">
+    <footer class="bg-fondoOscuro text-light  py-5">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-                <img src="imagenes/logo magno systems.png" alt="Logo Magno Systems" width="75" height="50">
+                <img src="imagenes/logo magno systems.png" alt="Logo Magno Systems" width="90" height="90">
                 <span class="ms-3">© 2024 MagnoSystems</span>
             </div>
             <ul class="list-unstyled d-flex mb-0">
@@ -172,9 +199,8 @@
             </ul>
         </div>
     </footer>
-
     <!-- Bootstrap JS -->
+     <script src="javaScript/carrusel.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

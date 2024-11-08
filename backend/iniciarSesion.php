@@ -48,7 +48,7 @@
             {
                 $_SESSION['medico'] = true;
             }
-            header("location: ../paginas/iniciarSesionVisual.php");
+            header("location: ../index.php");
         }
     }
 ?>
