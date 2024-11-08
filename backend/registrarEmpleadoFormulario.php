@@ -14,16 +14,15 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="registrarEmpleado.php" method="post">
+                <form action="../../backend/registrarEmpleado.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
                     <label>Email:</label>
                     <input type="email" name="email" placeholder="Ingrese el email" required><br>
-                    <label>Contraseña:</label>
                     <input type="hidden" name="contraseña" value="noCreada"><br>
                     <input type="submit" name="enviar" value="Enviar">
                 </form>
-                <a href="registrarMedicoFormulario.php">Quiere ingresar un médico?</a>
+                <a href="../medicos/registrarMedicoVisual.php">Quiere ingresar un médico?</a>
             </body>
             </html>
 
@@ -32,12 +31,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador para registrar empleados";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../iniciarSesionVisual.php");
     }
 ?>

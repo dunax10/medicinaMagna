@@ -31,4 +31,4 @@
     $stmt->close();
 
     $_SESSION['mensaje'] = "Empleado modificado exitosamente";
-    header('Location: verListaEmpleados.php');
+    header('Location: ../paginas/empleados/verListaEmpleadosVisual.php');

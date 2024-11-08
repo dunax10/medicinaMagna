@@ -43,12 +43,12 @@
         $stmt->close();
 
         $_SESSION['mensaje'] = "Usuario creado con éxito";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/empleados/registrarEmpleadoVisual.php");
     }
     else
     {
         $_SESSION['mensaje'] = "El mail ya existe";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
         $stmt->close();
     }
 ?>

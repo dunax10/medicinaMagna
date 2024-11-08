@@ -1,7 +1,6 @@
 <?php
     include('conexion.php');
     include('mensaje.php');
-    session_start();
     
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
         $idUsuario = $_SESSION['idUsuario'];
@@ -51,13 +50,13 @@
                     <strong>Nombre:</strong> <?= $nombre ?> <br>
                     <strong>Email:</strong> <?= $mail ?>
                     <?php if ($_SESSION['admin'] == true): ?>
-                        <form action="../backend/modificarEmpleadosFormulario.php" method="post" class="mt-2">
+                        <form action="../../backend/modificarEmpleadosFormulario.php" method="post" class="mt-2">
                             <input type="hidden" name="idEmpleado" value="<?= $idEmpleado ?>">
                             <input type="hidden" name="nombre" value="<?= $nombre ?>">
                             <input type="hidden" name="mail" value="<?= $mail ?>">
                             <button type="submit" class="delete-btn">Modificar</button>
                         </form>
-                        <form action="../backend/darBajaEmpleado.php" method="post" class="mt-2">
+                        <form action="../../backend/darBajaEmpleado.php" method="post" class="mt-2">
                             <input type="hidden" name="idEmpleado" value="<?= $idEmpleado ?>">
                             <button type="submit" class="delete-btn">Eliminar</button>
                         </form>
@@ -79,6 +78,6 @@
 <?php
     } else {
         $_SESSION['mensaje'] = "Necesitas iniciar sesión";
-        header('location: iniciarSesionFormulario.php');
+        header('location: ../iniciarSesionVisual.php');
     }
 ?>

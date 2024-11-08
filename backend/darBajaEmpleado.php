@@ -42,7 +42,7 @@
             if($stmt->num_rows == 0)
             {
                 $_SESSION['mensaje'] = "Empleado eliminado exitosamente";
-                header('Location: verListaEmpleados.php');
+                header('Location: ../paginas/empleados/verListaEmpleadosVisual.php');
             }
             else
             {
@@ -72,18 +72,18 @@
                 }
                 $stmt->close();
                 $_SESSION['mensaje'] = "Medico eliminado exitosamente";
-                header('Location: verListaEmpleados.php');
+                header('Location: ../paginas/empleados/verListaEmpleadosVisual.php');
             }
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header('Location: iniciarSesionFormulario.php');
+            header('Location: ../paginas/iniciarSesionVisual.php');
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header('Location: iniciarSesionFormulario.php');
+        header('Location: ../paginas/iniciarSesionVisual.php');
     }
 ?>
