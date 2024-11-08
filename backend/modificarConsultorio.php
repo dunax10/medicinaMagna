@@ -30,4 +30,4 @@
     $stmt->close();
 
     $_SESSION['mensaje'] = "Consultorio modificado exitosamente";
-    header('Location: verListaConsultorios.php');
+    header('Location: ../paginas/consultorios/verListaConsultoriosVisual.php');

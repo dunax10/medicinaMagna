@@ -15,28 +15,28 @@
             if($stmt->num_rows == 0)
             {
                 $stmt->close();
-                $sql = "INSERT INTO `consultorios`(`nombre`) VALUES (?)";
+                $sql = "INSERT INTO `consultorios`(`nombre`, `vigente`) VALUES (?, 1)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param('s', $nombre);
                 $stmt->execute();
                 $_SESSION['mensaje'] = "El consultorio fue creado con éxito";
-                header("location: crearConsultorioFormulario.php");
+                header("location: ../paginas/consultorios/registrarConsultorioVisual.php");
             }
             else
             {
                 $_SESSION['mensaje'] = "El consultorio $nombre ya existía";
-                header("location: crearConsultorioFormulario.php");
+                header("location: ../paginas/consultorios/registrarConsultorioVisual.php");
             }
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
     }
 ?>

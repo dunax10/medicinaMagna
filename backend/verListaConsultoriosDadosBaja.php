@@ -50,9 +50,9 @@
                     <strong>ID:</strong> <?= $idConsultorio ?> <br>
                     <strong>Nombre:</strong> <?= $nombre ?> <br>
                     <?php if ($_SESSION['admin'] == true): ?>
-                        <form action="../backend/darBajaConsultorio.php" method="post" class="mt-2">
+                        <form action="../../backend/restaurarConsultorio.php" method="post" class="mt-2">
                             <input type="hidden" name="idConsultorio" value="<?= $idConsultorio ?>">
-                            <button type="submit" class="delete-btn">Eliminar</button>
+                            <button type="submit" class="delete-btn">Restaurar</button>
                         </form>
                     <?php endif; ?>
                 </div>
@@ -72,6 +72,6 @@
 <?php
     } else {
         $_SESSION['mensaje'] = "Necesitas iniciar sesión";
-        header('location: iniciarSesionFormulario.php');
+        header('location: ../iniciarSesionVisual.php');
     }
 ?>
