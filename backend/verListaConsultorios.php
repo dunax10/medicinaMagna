@@ -53,7 +53,7 @@
                             <input type="hidden" name="nombre" value="<?= $nombre ?>">
                             <button type="submit" class="delete-btn">Modificar</button>
                         </form>
-                        <form action="darBajaConsultorio.php" method="post" class="mt-2">
+                        <form action="../backend/darBajaConsultorio.php" method="post" class="mt-2">
                             <input type="hidden" name="idConsultorio" value="<?= $idConsultorio ?>">
                             <button type="submit" class="delete-btn">Eliminar</button>
                         </form>

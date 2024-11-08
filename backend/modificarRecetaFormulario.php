@@ -30,7 +30,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="modificarReceta.php" method="post">
+                <form action="../backend/modificarReceta.php" method="post">
                     <label>Seleccione un paciente:</label>
                     <select id='BuscarPacientes' style='width: 200px;' lang="es" name="idPaciente" value="<?= $nombrePaciente ?>" required>
                         <option value='<?= $idPaciente ?>' selected><?= $nombrePaciente ?></option>

@@ -14,7 +14,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="crearConsultorio.php" method="post">
+                <form action="../backend/crearConsultorio.php" method="post">
                     <label>Nombre o número identificador:</label>
                     <input type="text" name="nombre" placeholder="Ingrese el nombre o número" required><br>
                     <input type="submit" name="enviar" value="Enviar">

@@ -23,7 +23,7 @@
             {
                 if($_SESSION['admin'] == true)
                 {
-                        echo "<form action='restaurarEnfermedad.php' method='post'>
+                        echo "<form action='../backend/restaurarEnfermedad.php' method='post'>
                             <input type='hidden' name='idEnfermedad' value='$idEnfermedad'>
                             <input type='submit' value='X'>
                         </form>";

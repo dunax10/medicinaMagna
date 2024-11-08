@@ -72,7 +72,7 @@
                             <input type="hidden" name="fechaNacimiento" value="<?= $fechaNacimiento ?>">
                             <button type="submit" class="delete-btn">Modificar</button>
                         </form>
-                        <form action="darBajaMedico.php" method="post">
+                        <form action="../backend/darBajaMedico.php" method="post">
                             <input type="hidden" name="idMedico" value="<?= $idMedico ?>">
                             <button type="submit" class="btn btn-delete">Eliminar</button>
                         </form>

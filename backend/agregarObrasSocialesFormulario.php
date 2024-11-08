@@ -14,7 +14,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="agregarObrasSociales.php" method="post">
+                <form action="../backend/agregarObrasSociales.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
                     <label>Telefono:</label>

@@ -58,7 +58,7 @@
                 <div class="receta-card">
                     <div class="receta-header">
                         <?php if ($_SESSION['admin'] == true): ?>
-                            <form action="modificarRecetaFormulario.php" method="post" class="mt-2">
+                            <form action="../backend/modificarRecetaFormulario.php" method="post" class="mt-2">
                                 <input type="hidden" name="idReceta" value="<?= $idReceta ?>">
                                 <input type="hidden" name="idPaciente" value="<?= $idPaciente ?>">
                                 <input type="hidden" name="nombrePaciente" value="<?= $nombrePaciente ?>">
@@ -120,7 +120,7 @@
                             </form>
 
                             <!-- Nuevo formulario para enviar los mismos datos -->
-                            <form action="pasarHTMLaPDF.php" method="post" class="mt-2">
+                            <form action="../backend/pasarHTMLaPDF.php" method="post" class="mt-2">
                                 <input type="hidden" name="idReceta" value="<?= $idReceta ?>">
                                 <input type="hidden" name="nombrePaciente" value="<?= $nombrePaciente ?>">
                                 <input type="hidden" name="fecha" value="<?= $fecha ?>">
@@ -131,7 +131,7 @@
                                 <input type="submit" class="btn btn-secondary" value="Crear pdf">
                             </form>
 
-                            <form action="darBajaReceta.php" method="post" class="mt-2">
+                            <form action="../backend/darBajaReceta.php" method="post" class="mt-2">
                                 <input type="hidden" name="idReceta" value="<?= $idReceta ?>">
                                 <button type="submit" class="delete-btn">Eliminar</button>
                             </form>

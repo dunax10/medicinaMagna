@@ -29,7 +29,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="modificarHistorialClinico.php" method="post">
+                <form action="../backend/modificarHistorialClinico.php" method="post">
                     <label>Seleccione un paciente:</label>
                     <select id='BuscarPacientes' style='width: 200px;' lang="es" name="idPaciente" value="<?= $nombrePaciente ?>" required>
                         <option value='<?= $idPaciente ?>' selected><?= $nombrePaciente ?></option>

@@ -20,7 +20,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="asociarConsultorios.php" method="post">
+                <form action="../backend/asociarConsultorios.php" method="post">
                     <label>Seleccione un medico:</label>
                     <select id='BuscarMedicos' style='width: 200px;' lang="es" name="idMedico" required>
                         <option value='0'>- Buscar medicos -</option>

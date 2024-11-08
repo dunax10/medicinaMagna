@@ -12,7 +12,7 @@
 <body>
     <div class="contenedorRegistrarse">
         <h2 class="text-center mb-4">Registrarse</h2>
-        <form action="crearContraseña.php" method="post">
+        <form action="../backend/crearContraseña.php" method="post">
             <!-- Email input -->
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electrónico</label>

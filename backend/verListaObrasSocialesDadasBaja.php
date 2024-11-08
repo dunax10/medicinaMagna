@@ -18,7 +18,7 @@
             $stmt->bind_result($idObraSocial, $nombre, $telefono, $vigente);
             while ($stmt->fetch()) 
             {
-                echo "<form action='restaurarObraSocial.php' method='post'>
+                echo "<form action='../backend/restaurarObraSocial.php' method='post'>
                     <input type='hidden' name='idObraSocial' value='$idObraSocial'>
                     <input type='submit' value='X'>
                 </form>";

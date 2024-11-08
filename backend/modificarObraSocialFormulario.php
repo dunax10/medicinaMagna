@@ -17,7 +17,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="modificarObraSocial.php" method="post">
+                <form action="../backend/modificarObraSocial.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
                     <label>Telefono:</label>

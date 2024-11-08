@@ -57,7 +57,7 @@
                             <input type="hidden" name="mail" value="<?= $mail ?>">
                             <button type="submit" class="delete-btn">Modificar</button>
                         </form>
-                        <form action="darBajaEmpleado.php" method="post" class="mt-2">
+                        <form action="../backend/darBajaEmpleado.php" method="post" class="mt-2">
                             <input type="hidden" name="idEmpleado" value="<?= $idEmpleado ?>">
                             <button type="submit" class="delete-btn">Eliminar</button>
                         </form>

@@ -32,7 +32,7 @@
                 $stmtIdMedicamento->store_result();
 
                 if ($_SESSION['admin'] == true): ?>
-                    <form action="modificarHistorialClinicoFormulario.php" method="post" class="mt-2">
+                    <form action="../backend/modificarHistorialClinicoFormulario.php" method="post" class="mt-2">
                         <input type="hidden" name="idHistorial" value="<?= $idHistorial ?>">
                         <input type="hidden" name="idPaciente" value="<?= $idPaciente ?>">
                         <input type="hidden" name="nombrePaciente" value="<?= $nombrePaciente ?>">

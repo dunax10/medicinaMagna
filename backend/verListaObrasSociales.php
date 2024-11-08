@@ -60,7 +60,7 @@
                         <input type="hidden" name="telefono" value="<?= $telefono ?>">
                         <button type="submit" class="btn btn-delete">Modificar</button>
                     </form>
-                    <form action="darBajaObraSocial.php" method="post">
+                    <form action="../backend/darBajaObraSocial.php" method="post">
                         <input type="hidden" name="idObraSocial" value="<?= $idObraSocial ?>">
                         <button type="submit" class="btn btn-delete">Eliminar</button>
                     </form>

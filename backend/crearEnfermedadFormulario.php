@@ -14,7 +14,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="crearEnfermedad.php" method="post">
+                <form action="../backend/crearEnfermedad.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
                     <input type="submit" name="enviar" value="Enviar">

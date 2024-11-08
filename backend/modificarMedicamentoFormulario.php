@@ -16,7 +16,7 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="modificarMedicamento.php" method="post">
+                <form action="../backend/modificarMedicamento.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
                     <input type="hidden" name="idMedicamento" value="<?= $idMedicamento ?>">

@@ -20,7 +20,7 @@
             {
                 $contraseña = null;
                 $administrador = null;
-                echo "<form action='restaurarEmpleado.php' method='post'>
+                echo "<form action='../backend/restaurarEmpleado.php' method='post'>
                     <input type='hidden' name='idEmpleado' value='$idEmpleado'>
                     <input type='submit' value='X'>
                 </form>";
