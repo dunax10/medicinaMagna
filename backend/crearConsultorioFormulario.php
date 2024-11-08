@@ -15,9 +15,9 @@
             </head>
             <body>
                 <form action="../backend/crearConsultorio.php" method="post">
-                    <label>Nombre o número identificador:</label>
-                    <input type="text" name="nombre" placeholder="Ingrese el nombre o número" required><br>
-                    <input type="submit" name="enviar" value="Enviar">
+                    <label>Nombre o número identificador:</label><br>
+                    <input class="form-control" type="text" name="nombre" placeholder="Ingrese el nombre o número" required><br>
+                    <input class="btn btn-primary" type="submit" name="enviar" value="Enviar">
                 </form>
             </body>
             </html>

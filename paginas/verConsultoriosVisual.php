@@ -16,9 +16,9 @@
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow-lg pt-5" style="min-height: 350;">
                     <div class="card-body pt-5">
-                        <h4 class="card-title">Registrar Consultorio</h4>
-                        <p class="card-text">Añade un nuevo Consultorio a la base de datos.</p>
-                        <a href="Consultorios/registrarConsultorioVisual.php" class="btn btn-primary">Ir al Registro</a>
+                        <h4 class="card-title">Crear Consultorio</h4>
+                        <p class="card-text">Añade un nuevo Consultorio al sistema.</p>
+                        <a href="consultorios/CrearConsultorioVisual.php" class="btn btn-primary">Crear</a>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                     <div class="card-body pt-5">
                         <h4 class="card-title">Listado de Consultorios</h4>
                         <p class="card-text">Consulta el listado de Consultorios registradas.</p>
-                        <a href="Consultorios/verListaConsultoriosVisual.php" class="btn btn-primary">Ver Listado</a>
+                        <a href="consultorios/verListaConsultoriosVisual.php" class="btn btn-primary">Ver Listado</a>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <div class="card-body pt-5">
                         <h4 class="card-title">Listado de Consultorios dados de baja</h4>
                         <p class="card-text">Consulta el listado de Consultorios eliminados.</p>
-                        <a href="Consultorios/verListaConsultoriosDadosBajaVisual.php" class="btn btn-primary">Ver listado</a>
+                        <a href="consultorios/verListaConsultoriosDadosBajaVisual.php" class="btn btn-primary">Ver listado</a>
                     </div>
                 </div>
             </div>
