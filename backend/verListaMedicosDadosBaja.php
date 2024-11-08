@@ -18,7 +18,7 @@
             $stmt->bind_result($idMedico, $nombre, $apellido, $sexo, $dni, $fechaNacimiento, $fechaIngreso, $telefono, $domicilio, $disponibilidad, $idEmpleado, $vigente);
             while ($stmt->fetch()) 
             {
-                echo "<form action='../backend/restaurarMedico.php' method='post'>
+                echo "<form action='../../backend/restaurarMedico.php' method='post'>
                     <input type='hidden' name='idMedico' value='$idMedico'>
                     <input type='hidden' name='idEmpleado' value='$idEmpleado'>
                     <input type='submit' value='X'>
@@ -34,6 +34,6 @@
     else
     {
         $_SESSION['mensaje'] = "Necesitas iniciar sesion";
-        header('location: iniciarSesionFormulario.php');
+        header('location: ../paginas/iniciarSesionVisual.php');
     }
 ?>

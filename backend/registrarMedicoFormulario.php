@@ -14,7 +14,7 @@
                 <title>Document</title>
             </head>
             <body>
-            <form action="registrarMedico.php" method="post" class="container">
+            <form action="../../backend/registrarMedico.php" method="post" class="container">
     <div class="row">
         <div class="col-md-6">
             <label>Nombre:</label>
@@ -64,12 +64,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador para registrar empleados";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../iniciarSesionVisual.php");
     }
 ?>

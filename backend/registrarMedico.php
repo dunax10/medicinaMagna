@@ -95,12 +95,12 @@
         include('registrarEmpleado.php');
 
         $_SESSION['mensaje'] = "Usuario creado con éxito";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/medicos/verMedicosVisual.php");
     }
     else
     {
         $_SESSION['mensaje'] = "El mail ya existe";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
         $stmt->close();
     }
 ?>

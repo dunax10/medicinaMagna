@@ -1,6 +1,6 @@
 <?php
 //idPaciente	fecha	cantidadMedicamento	periodoMedicamentos	
-    include('mensaje.php');
+    session_start();
     if(isset($_SESSION['admin']))
     {
         if($_SESSION['admin'] == true)
@@ -62,12 +62,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser admin para modificar los medicos";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
     }
 ?>

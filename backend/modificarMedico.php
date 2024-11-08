@@ -36,4 +36,4 @@
     $stmt->close();
 
     $_SESSION['mensaje'] = "Medico modificado exitosamente";
-    header('Location: ../paginas/verListaMedicos.php');
+    header('Location: ../paginas/medicos/verListaMedicosVisual.php');
