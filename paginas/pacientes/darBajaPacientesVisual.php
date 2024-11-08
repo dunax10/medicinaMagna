@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../scss/estiloBootstrap.css">
-    <title>Buscar Paciente | Medicina Magna</title>
+    <title>Dar baja Paciente | Medicina Magna</title>
 </head>
 <body class="bg-fondoClaro"></body>
     <header class="bg-secundario ">
@@ -13,7 +13,7 @@
     
     <main class="bg-fondoClaro container">
         <div>
-            <?php include('../../backend/darBajaPacientes.php'); ?>
+            <?php include('../../backend/verListaPacientesDadosBaja.php'); ?>
         </div>
     </main>
     

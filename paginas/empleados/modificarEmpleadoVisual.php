@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../scss/estiloBootstrap.css">
-    <title>Buscar Paciente | Medicina Magna</title>
+    <title>Modificar Empleado | Medicina Magna</title>
 </head>
 <body class="bg-fondoClaro"></body>
     <header class="bg-secundario ">
         <?php include('header.php'); ?>
     </header>
     
-    <main class="bg-fondoClaro container">
-        <div>
-            <?php include('../../backend/buscarPacientes.php'); ?>
+    <main class="bg-fondoClaro flex-grow-1 d-flex justify-content-center align-items-center w-100 my-5">
+        <div class="form-box my-4 p-4">
+            <div class="card p-4 shadow-lg">
+                <h2 class="p-3">Modificar Empleado</h2>
+                <?php include('../../backend/modificarEmpleadoFormulario.php'); ?>
+            </div>
         </div>
     </main>
     
