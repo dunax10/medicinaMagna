@@ -1,6 +1,7 @@
 <?php
 //idPaciente	fecha	cantidadMedicamento	periodoMedicamentos	
     include('mensaje.php');
+    session_start();
     if(isset($_SESSION['medico']))
     {
         if($_SESSION['medico'] == true)
@@ -24,6 +25,7 @@
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <!-- jQuery -->
+                 <link rel="stylesheet" href="../../scss/estiloBootstrap.scss">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script> 
@@ -38,10 +40,10 @@
                     </select><br>
                     
                     <label>Cantidad del medicamento:</label>
-                    <input type="number" name="cantidadMedicamento" placeholder="<?= $cantidadMedicamento ?>" value="<?= $cantidadMedicamento ?>" required><br>
+                    <input type="number" class="form-control" name="cantidadMedicamento" placeholder="<?= $cantidadMedicamento ?>" value="<?= $cantidadMedicamento ?>" required><br>
                     
                     <label>Periodo del medicamento:</label>
-                    <input type="text" name="periodoMedicamento" placeholder="<?= $periodoMedicamentos ?>" value="<?= $periodoMedicamentos ?>" required><br>
+                    <input type="text" name="periodoMedicamento" class="form-control" placeholder="<?= $periodoMedicamentos ?>" value="<?= $periodoMedicamentos ?>" required><br>
                     
                     <input type="hidden" name="idReceta" value="<?= $idReceta ?>">
                     
@@ -57,7 +59,7 @@
                         <option value='0'>- Buscar medicamentos -</option>
                     </select><br>
 
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" class="btn btn-terciario" name="enviar" value="Enviar">
                 </form>
             </body>
             </html>
@@ -78,12 +80,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser medico para crear historiales clinicos";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
     }
 ?>

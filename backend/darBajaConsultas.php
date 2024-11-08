@@ -28,7 +28,7 @@
             $stmt->close();
 
             $_SESSION['mensaje'] = "consulta eliminada exitosamente";
-            header('Location: ../paginas/turnos/verListaConsultasVisual.php');
+            header('Location: ../paginas/turnos/verListaTurnosVisual.php');
         }
         else
         {

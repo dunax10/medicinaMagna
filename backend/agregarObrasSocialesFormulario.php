@@ -14,12 +14,12 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="../../backend/agregarObrasSociales.php" method="post">
+                <form class="m-3"action="../../backend/agregarObrasSociales.php" method="post">
                     <label>Nombre:</label>
-                    <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
+                    <input type="text" name="nombre" class="form-control" placeholder="Ingrese el nombre" required><br>
                     <label>Telefono:</label>
-                    <input type="text" name="telefono" placeholder="Ingrese el telefono" required><br>
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="text" name="telefono"class="form-control" placeholder="Ingrese el telefono" required><br>
+                    <input type="submit" name="enviar" class="btn btn-terciario" value="Enviar">
                 </form>
             </body>
             </html>

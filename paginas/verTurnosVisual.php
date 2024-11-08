@@ -32,16 +32,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 mb-5">
-                <div class="card h-100 shadow-lg pt-5" style="min-height: 300px;">
-                    <div class="card-body pt-5">
-                        <h4 class="card-title">Listado de Turnos dados de baja</h4>
-                        <p class="card-text">Consulta el listado de Turnos eliminados.</p>
-                        <a href="turnos/verListaTurnosDadosBajaVisual.php" class="btn btn-primary">Ver listado</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
     

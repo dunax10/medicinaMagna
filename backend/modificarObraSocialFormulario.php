@@ -1,5 +1,6 @@
 <?php
     include('mensaje.php');
+    session_start();
     if(isset($_SESSION['admin']))
     {
         if($_SESSION['admin'] == true)
@@ -14,17 +15,21 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="../scss/estiloBootstrap.css">
                 <title>Document</title>
             </head>
             <body>
+                <div>
                 <form action="../backend/modificarObraSocial.php" method="post">
                     <label>Nombre:</label>
-                    <input type="text" name="nombre" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
+                    <input type="text" name="nombre"class="form-control" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
                     <label>Telefono:</label>
-                    <input type="text" name="telefono" placeholder="<?= $telefono ?>" value="<?= $telefono ?>" required><br>
+                    <input type="text" name="telefono" class="form-control"placeholder="<?= $telefono ?>" value="<?= $telefono ?>" required><br>
                     <input type="hidden" name="idObraSocial" value="<?=$idObraSocial ?>">
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" name="enviar" class="btn btn-terciario" value="Enviar">
                 </form>
+                </div>
+                
             </body>
             </html>
 

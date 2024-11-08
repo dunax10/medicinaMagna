@@ -12,7 +12,7 @@
         <nav class="navbar navbar-expand-lg bg-secundario">
             <div class="container">
                 <!-- Logo visible en todas las pantallas; nombre visible solo en pantallas grandes -->
-                <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+                <a class="navbar-brand d-flex align-items-center" href="../../index.php">
                     <img src="../../imagenes/logosinnombre.png" alt="Logo" width="50" height="40">
                     <span class="text-fondoOscuro ms-2 fs-5 d-none d-lg-inline">MedicinaMagna</span>
                 </a>

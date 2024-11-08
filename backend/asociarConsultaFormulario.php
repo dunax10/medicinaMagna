@@ -28,12 +28,12 @@ include('mensaje.php');
                 </select><br>
 
                 <label>Fecha del turno</label>
-                <input type="date" name="fecha"><br>
+                <input type="date" name="fecha" class="form-control"><br>
 
                 <label>Hora del turno (formato de 24 horas hh:mm)</label>
-                <input type="text" name="hora" placeholder="Ingrese la hora" required><br>
+                <input type="text" name="hora" placeholder="Ingrese la hora" class="form-control" required><br>
 
-                <input type="submit" name="enviar" value="Enviar">
+                <input type="submit" name="enviar" value="Enviar" class="btn btn-terciario">
             </form>
         </body>
         </html>
@@ -44,7 +44,7 @@ include('mensaje.php');
                 // Inicializar Select2 para buscar médicos
                 $("#BuscarMedicos").select2({
                     ajax: {
-                        url: "BuscarMedicos.php",
+                        url: "../../backend/BuscarMedicos.php",
                         type: "post",
                         dataType: 'json',
                         delay: 250,
@@ -73,7 +73,7 @@ include('mensaje.php');
                 // Inicializar Select2 para buscar pacientes
                 $("#BuscarPacientes").select2({
                     ajax: {
-                        url: "BuscarPacientes.php",
+                        url: "../../backend/BuscarPacientes.php",
                         type: "post",
                         dataType: 'json',
                         delay: 250,

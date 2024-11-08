@@ -16,7 +16,7 @@
             <div class="card p-4 shadow-lg">
                 <h2 class="p-3">Crear Turno</h2>
                 <div class="input-group mb-3">
-                    <?php include('../../backend/crearConsultaFormulario.php'); ?>
+                    <?php include('../../backend/asociarConsultaFormulario.php'); ?>
                 </div>
             </div>
         </div>

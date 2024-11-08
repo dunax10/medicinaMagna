@@ -55,11 +55,11 @@
                         <form action="../../backend/modificarEnfermedadesFormulario.php" method="post" class="mt-2">
                             <input type="hidden" name="idEnfermedad" value="<?= $idEnfermedad ?>">
                             <input type="hidden" name="nombre" value="<?= $nombre ?>">
-                            <button type="submit" class="delete-btn">Modificar</button>
+                            <button type="submit" class="btn btn-terciario">Modificar</button>
                         </form>
                         <form action="../../backend/darBajaEnfermedad.php" method="post" class="mt-2">
                             <input type="hidden" name="idEnfermedad" value="<?= $idEnfermedad ?>">
-                            <button type="submit" class="delete-btn">Eliminar</button>
+                            <button type="submit" class="btn btn-rojo">Eliminar</button>
                         </form>
                     <?php endif; ?>
                 </div>
@@ -79,6 +79,6 @@
 <?php
     } else {
         $_SESSION['mensaje'] = "Necesitas iniciar sesión";
-        header('location: ../iniciarSesionVisual.php');
+        header('location: ../../iniciarSesionVisual.php');
     }
 ?>

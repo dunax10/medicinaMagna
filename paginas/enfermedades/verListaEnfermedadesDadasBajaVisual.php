@@ -16,7 +16,7 @@
             <div class="card p-4 shadow-lg">
                 <h2>Listado de Enfermedades dadas de baja</h2>
                 <div class="input-group mb-3">
-                    <?php include('../../backend/verListaEnfermedadsDadasBaja.php'); ?>
+                    <?php include('../../backend/verListaEnfermedadesDadasBaja.php'); ?>
                 </div>
             </div>
         </div>

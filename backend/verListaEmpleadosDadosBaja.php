@@ -20,11 +20,12 @@
             {
                 $contraseña = null;
                 $administrador = null;
-                echo "<form action='../../backend/restaurarEmpleado.php' method='post'>
+                echo "<div class='border p-3 m-3'><form action='../../backend/restaurarEmpleado.php' method='post'>
                     <input type='hidden' name='idEmpleado' value='$idEmpleado'>
-                    <input type='submit' value='X'>
+                    <input type='submit'class='btn btn-verde ' value='^'>
                 </form>";
-                echo "ID: $idEmpleado NOMBRE: $nombre MAIL: $mail<br>";
+                echo "<p>ID: $idEmpleado </p><p> NOMBRE: $nombre </p><p> MAIL: $mail </p><br>";
+                echo "</div>";
             }
             $stmt->close();
         }

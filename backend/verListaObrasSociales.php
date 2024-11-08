@@ -25,22 +25,22 @@
         <?php
             while ($stmt->fetch()) {
         ?>
-            <div class="obra-social">
+            <div class="border p-3 m-3">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
                         <strong>ID:</strong> <?= $idObraSocial ?> <br>
                         <strong>Nombre:</strong> <?= $nombre ?> <br>
                         <strong>Teléfono:</strong> <?= $telefono ?>
                     </div>
-                    <form action="../../backend/modificarObraSocialFormulario.php" method="post">
+                    <form class="p-3"action="../../backend/modificarObraSocialFormulario.php" method="post">
                         <input type="hidden" name="idObraSocial" value="<?= $idObraSocial ?>">
                         <input type="hidden" name="nombre" value="<?= $nombre ?>">
                         <input type="hidden" name="telefono" value="<?= $telefono ?>">
-                        <button type="submit" class="btn btn-delete">Modificar</button>
+                        <button type="submit" class="btn btn-terciario">Modificar</button>
                     </form>
                     <form action="../../backend/darBajaObraSocial.php" method="post">
                         <input type="hidden" name="idObraSocial" value="<?= $idObraSocial ?>">
-                        <button type="submit" class="btn btn-delete">Eliminar</button>
+                        <button type="submit" class="btn btn-rojo">Eliminar</button>
                     </form>
                 </div>
             </div>

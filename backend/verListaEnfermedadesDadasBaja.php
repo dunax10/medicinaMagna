@@ -1,6 +1,5 @@
 <?php
     include('conexion.php');
-    session_start();
     if(!isset($_SESSION['idUsuario']))
     {
         $_SESSION['mensaje'] = "Necesitas iniciar sesion";
@@ -16,7 +15,7 @@
         //almaceno el resultado para verificar
         $stmt->store_result();
         //traigo los resultados de la consulta y la recorro con un while
-        $stmt->bind_result($idEnfermedad, $nombre);
+        $stmt->bind_result($idEnfermedad, $nombre, $vigente);
         while ($stmt->fetch()) 
         {
             if(isset($_SESSION['admin']))
@@ -25,11 +24,11 @@
                 {
                         echo "<form action='../../backend/restaurarEnfermedad.php' method='post'>
                             <input type='hidden' name='idEnfermedad' value='$idEnfermedad'>
-                            <input type='submit' value='X'>
+                            <input type='submit' value='X' class='btn btn-terciario'>
                         </form>";
                 }
             }
-            echo "id $idEnfermedad nombre $nombre<br>";
+            echo "<strong><span>id $idEnfermedad nombre $nombre</span></strong><br>";
         }
         $stmt->close();
 ?>

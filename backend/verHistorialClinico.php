@@ -17,7 +17,7 @@
             if($stmt->num_rows == 0)
             {
                 $_SESSION['mensaje'] = "No tiene historial clínico registrado";
-                header('location: verListaPacientes.php');
+                header('location: ../pacientes/verListaPacientesVisual.php');
             }
             //traigo los resultados de la consulta y la recorro con un while
             $stmt->bind_result($idHistorial, $idPaciente, $fecha, $descripcionMalestar, $nombrePaciente);
@@ -108,7 +108,7 @@
                     $stmtIdEnfermedad->close();
                 }
 
-                echo "DESCRIPCION DEL MALESTAR: $descripcionMalestar<br><input type='submit' value='Modificar'></form>";
+                echo "<div class='border p-4 mx-3'>DESCRIPCION DEL MALESTAR: $descripcionMalestar<br><input type='submit' class='btn btn-terciario'value='Modificar'></form></div>";
             }
             $stmt->close();
         }

@@ -16,7 +16,7 @@
             <div class="card p-4 shadow-lg">
                 <h2 class="p-3">Registrar Receta</h2>
                 <div class="input-group mb-3">
-                    <?php include('../../backend/registrarRecetaFormulario.php'); ?>
+                    <?php include('../../backend/asociarRecetasFormulario.php'); ?>
                 </div>
             </div>
         </div>

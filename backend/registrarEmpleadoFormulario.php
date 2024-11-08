@@ -16,12 +16,13 @@
             <body>
                 <form action="../../backend/registrarEmpleado.php" method="post">
                     <label>Nombre:</label>
-                    <input type="text" name="nombre" placeholder="Ingrese el nombre" required><br>
+                    <input type="text" name="nombre" class="form-control" placeholder="Ingrese el nombre" required><br>
                     <label>Email:</label>
-                    <input type="email" name="email" placeholder="Ingrese el email" required><br>
+                    <input type="email" name="email"class="form-control" placeholder="Ingrese el email" required><br>
                     <input type="hidden" name="contraseña" value="noCreada"><br>
-                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" name="enviar" class="btn btn-terciario" value="Enviar">
                 </form>
+                <br>
                 <a href="../medicos/registrarMedicoVisual.php">Quiere ingresar un médico?</a>
             </body>
             </html>

@@ -11,7 +11,7 @@
     } else {
         $search = '%' . $_POST['searchTerm'] . '%'; // Search text con comodines
         // Mostrar resultados
-        $stmt = $conn->prepare("SELECT idMedico, nombre FROM medicos WHERE nombre AND vigente = 1 LIKE ? ORDER BY nombre LIMIT ? ");
+        $stmt = $conn->prepare("SELECT idMedico, nombre FROM medicos WHERE vigente = 1 AND nombre LIKE ? ORDER BY nombre LIMIT ? ");
         $stmt->bind_param('si', $search, $numberofrecords);
     }
 

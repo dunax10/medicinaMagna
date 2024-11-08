@@ -15,7 +15,7 @@
     <div class="form-box my-4">
             <div class="card p-4 shadow-lg">
                 <div class="input-group mb-4">
-                    <?php include('../../backend/verListaMedicos.php'); ?>
+                    <?php include('../../backend/verListaConsultas.php'); ?>
                 </div>
             </div>
         </div>
