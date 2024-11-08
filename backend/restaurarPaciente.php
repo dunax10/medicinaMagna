@@ -28,7 +28,7 @@
             $stmt->close();
             
             $_SESSION['mensaje'] = "Paciente restaurado exitosamente";
-            header('Location: verListaEmpleadosDadosBaja.php');
+            header('Location: verListaPacientesDadosBaja.php');
         }
         else
         {

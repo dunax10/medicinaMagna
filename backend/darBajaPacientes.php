@@ -28,7 +28,7 @@
             $stmt->close();
 
             $_SESSION['mensaje'] = "Empleado eliminado exitosamente";
-            header('Location: verListaEmpleados.php');
+            header('Location: verListaPacientes.php');
         }
         else
         {
