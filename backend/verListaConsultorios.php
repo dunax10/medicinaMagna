@@ -17,24 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Empleados</title>
-    <style>
-        .employee-card {
-            padding: 1rem;
-            background-color: #f8f9fa;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .delete-btn {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 0.25rem 0.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+
 </head>
 <body>
     <div class="container mt-5">

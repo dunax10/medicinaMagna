@@ -11,11 +11,11 @@
         <?php include('header.php'); ?>
     </header>
 
-    <main class="bg-fondoClaro flex-grow-1 d-flex justify-content-center align-items-center w-100">
+    <main class="bg-fondoClaro d-flex justify-content-center align-items-center my-3"> 
         <div class="form-box mt-4">
-            <div class="card p-4 shadow-lg">
-                <h2>Listado de Medicos dados de baja</h2>
-                <div class="input-group mb-3">
+        <h2>Medicos dados baja</h2>
+            <div class="card p-3 m-5 shadow-lg">
+                <div class=" mb-3">
                     <?php include('../../backend/verListaMedicosDadosBaja.php'); ?>
                 </div>
             </div>

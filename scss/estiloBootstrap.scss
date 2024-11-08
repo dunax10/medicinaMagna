@@ -10,7 +10,8 @@ $secundario: rgba(131, 201, 244);
 $terciario: rgba(163, 213, 255);
 $fondoClaro: rgb(235, 246, 253);
 $fondoOscuro: rgba(35, 87, 137);
-
+$rojo: rgb(211, 3, 3);
+$verde: rgb(140, 231, 112);
 // Reemplaza los colores de $theme-colors con tus colores personalizados
 $theme-colors: (
   "primary":    $primary,
@@ -22,7 +23,9 @@ $theme-colors: (
   "secundario": $secundario,
   "terciario":  $terciario,
   "fondoClaro": $fondoClaro,
-  "fondoOscuro": $fondoOscuro
+  "fondoOscuro": $fondoOscuro,
+  "rojo":   $rojo,
+  "verde":  $verde
 );
 
 // Importa las dependencias de Bootstrap después de definir colores
