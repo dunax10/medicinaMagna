@@ -39,7 +39,7 @@
                             </li>
                         <?php }else{ ?>
                             <li class="nav-item ms-3">
-                                <a href="../backend/cerrarSesion.php" class="btn btn-primary">Cerrar Sesión</a>
+                                <a href="backend/cerrarSesion.php" class="btn btn-primary">Cerrar Sesión</a>
                             </li>
                         <?php } ?>
                     </ul>
