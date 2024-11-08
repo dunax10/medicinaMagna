@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../scss/estiloBootstrap.css">
-    <title>Listado de Medicos dados de baja | Medicina Magna</title>
+    <title>Registrar Enfermedades | Medicina Magna</title>
 </head>
-<body class="bg-fondoClaro"></body>
+<body class="bg-fondoClaro">
     <header class="bg-secundario ">
         <?php include('header.php'); ?>
     </header>
-
-    <main class="bg-fondoClaro flex-grow-1 d-flex justify-content-center align-items-center w-100">
-        <div class="form-box mt-4">
+    
+    <main class="bg-fondoClaro flex-grow-1 d-flex justify-content-center align-items-center w-100 my-5">
+        <div class="form-box my-4">
             <div class="card p-4 shadow-lg">
-                <h2>Listado de Medicos dados de baja</h2>
+                <h2 class="p-3">Registrar Enfermedad</h2>
                 <div class="input-group mb-3">
-                    <?php include('../../backend/verListaMedicosDadosBaja.php'); ?>
+                    <?php include('../../backend/crearEnfermedadFormulario.php'); ?>
                 </div>
             </div>
         </div>
     </main>
     
-    <footer>
+    <footer class="">
         <?php include('footer.php'); ?>
     </footer>
 </body>
