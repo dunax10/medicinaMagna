@@ -1,5 +1,5 @@
 <?php
-    include('mensaje.php');
+    session_start();
     if(isset($_SESSION['medico']))
     {
         if($_SESSION['medico'] == true)
@@ -70,12 +70,12 @@
         else
         {
             $_SESSION['mensaje'] = "Debe ser medico para registrar pacientes";
-            header("location: iniciarSesionFormulario.php");
+            header("location: ../paginas/iniciarSesionVisual.php");
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesion";
-        header("location: iniciarSesionFormulario.php");
+        header("location: ../paginas/iniciarSesionVisual.php");
     }
 ?>

@@ -38,4 +38,4 @@
     $stmt->close();
 
     $_SESSION['mensaje'] = "Paciente modificado exitosamente";
-    header('Location: verListaPacientes.php');
+    header('Location: ../paginas/pacientes/verListaPacientesVisual.php');

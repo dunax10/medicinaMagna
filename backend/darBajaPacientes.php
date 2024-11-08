@@ -5,15 +5,15 @@
     {
         if($_SESSION['admin'] == true)
         {
-            $idEmpleado = $_POST['idEmpleado'];
-            $stmt = $conn->prepare("UPDATE `empleados` SET vigente = 0 WHERE idEmpleado = ? AND vigente = 1");
+            $idPaciente = $_POST['idPaciente'];
+            $stmt = $conn->prepare("UPDATE `pacientes` SET vigente = 0 WHERE idPaciente = ? AND vigente = 1");
             // Verificar si la preparación fue exitosa
             if ($stmt === false) 
             {
                 die('Error en la preparación: ' . $conn->error);
             }
             // Vincular parámetros
-            $stmt->bind_param('s', $idEmpleado);
+            $stmt->bind_param('s', $idPaciente);
             // Ejecutar la consulta
             $resultado = $stmt->execute();
             // Verificar si la ejecución fue exitosa
@@ -27,18 +27,18 @@
             }
             $stmt->close();
 
-            $_SESSION['mensaje'] = "Empleado eliminado exitosamente";
-            header('Location: verListaPacientes.php');
+            $_SESSION['mensaje'] = "Paciente eliminado exitosamente";
+            header('Location: ../paginas/pacientes/verListaPacientesVisual.php');
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header('Location: iniciarSesionFormulario.php');
+            header('Location: ../paginas/inciarSesionVisual.php');
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header('Location: iniciarSesionFormulario.php');
+        header('Location: ../paginas/inciarSesionVisual.php');
     }
 ?>

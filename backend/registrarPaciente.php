@@ -50,12 +50,12 @@
         $stmt->close();
 
         $_SESSION['mensaje'] = "Paciente creado con éxito";
-        header("location: registrarPacienteFormulario.php");
+        header("location: ../paginas/pacientes/registrarPacienteVisual.php");
     }
     else
     {
         $_SESSION['mensaje'] = "El mail ya existe";
-        header("location: registrarPacienteFormulario.php");
+        header("location: ../paginas/pacientes/registrarPacienteVisual.php");
         $stmt->close();
     }
 ?>

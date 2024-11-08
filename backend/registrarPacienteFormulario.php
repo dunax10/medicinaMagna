@@ -10,7 +10,7 @@
                 <title>Document</title>
             </head>
             <body>
-            <form action="registrarPaciente.php" method="post" class="container">
+            <form action="../../backend/registrarPaciente.php" method="post" class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <label>Nombre:</label>

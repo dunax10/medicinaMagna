@@ -60,12 +60,12 @@
                     <strong>Email:</strong> <?= $mail ?> <br>
 
                     <div class="action-links mt-3">
-                        <a href="verHistorialClinico.php?idPaciente=<?= $idPaciente ?>" class="btn btn-info">Historial Clínico</a>
-                        <a href="verListaRecetas.php?idPaciente=<?= $idPaciente ?>" class="btn btn-primary">Recetas</a>
+                        <a href="../historialesClinicos/verHistorialClinicoVisual.php?idPaciente=<?= $idPaciente ?>" class="btn btn-info">Historial Clínico</a>
+                        <a href="../recetas/verListaRecetasVisual.php?idPaciente=<?= $idPaciente ?>" class="btn btn-primary">Recetas</a>
                     </div>
 
                     <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
-                        <form action="../backend/modificarPacienteFormulario.php" method="post" class="mt-3">
+                        <form action="../../backend/modificarPacienteFormulario.php" method="post" class="mt-3">
                             <input type="hidden" name="idPaciente" value="<?= $idPaciente ?>">
                             <input type="hidden" name="nombre" value="<?= $nombre ?>">
                             <input type="hidden" name="apellido" value="<?= $apellido ?>">
@@ -78,7 +78,7 @@
                             <input type="hidden" name="mail" value="<?= $mail ?>">
                             <button type="submit" class="delete-btn">Modificar</button>
                         </form>
-                        <form action="../backend/darBajaPacientes.php" method="post" class="mt-3">
+                        <form action="../../backend/darBajaPacientes.php" method="post" class="mt-3">
                             <input type="hidden" name="idPaciente" value="<?= $idPaciente ?>">
                             <button type="submit" class="delete-btn">Eliminar</button>
                         </form>

@@ -28,17 +28,17 @@
             $stmt->close();
             
             $_SESSION['mensaje'] = "Paciente restaurado exitosamente";
-            header('Location: verListaPacientesDadosBaja.php');
+            header('Location: ../paginas/pacientes/verListaPacientesDadosBajaVisual.php');
         }
         else
         {
             $_SESSION['mensaje'] = "Debe ser administrador";
-            header('Location: iniciarSesionFormulario.php');
+            header('Location: ../paginas/iniciarSesionVisual.php');
         }
     }
     else
     {
         $_SESSION['mensaje'] = "Debe iniciar sesión";
-        header('Location: iniciarSesionFormulario.php');
+        header('Location: ../paginas/iniciarSesionVisual.php');
     }
 ?>
