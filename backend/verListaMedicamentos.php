@@ -1,6 +1,5 @@
 <?php
     include('conexion.php');
-    session_start();
     
     if(isset($_SESSION['idUsuario'])) {
         $idUsuario = $_SESSION['idUsuario'];

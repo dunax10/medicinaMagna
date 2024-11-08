@@ -1,5 +1,6 @@
 <?php
     include('mensaje.php');
+    session_start();
     if(isset($_SESSION['medico']))
     {
         if($_SESSION['medico'] == true)

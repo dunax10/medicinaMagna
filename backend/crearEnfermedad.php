@@ -18,12 +18,12 @@
             $stmt->bind_param('s', $nombre);
             $stmt->execute();
             $_SESSION['mensaje'] = "La enfermedad fue creada con éxito";
-            header("location: ../paginas/enfermedades/crearEnfermedadVisual.php");
+            header("location: ../paginas/enfermedades/registrarEnfermedadVisual.php");
         }
         else
         {
             $_SESSION['mensaje'] = "La enfermedad $nombre ya existía";
-            header("location: ../paginas/enfermedades/crearEnfermedadVisual.php");
+            header("location: ../paginas/enfermedades/registrarEnfermedadVisual.php");
         }
     }
     else

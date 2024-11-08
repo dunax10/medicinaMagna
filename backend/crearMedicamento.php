@@ -18,12 +18,12 @@
             $stmt->bind_param('s', $nombre);
             $stmt->execute();
             $_SESSION['mensaje'] = "El medicamento fue creado con éxito";
-            header("location: ../paginas/medicamentos/crearMedicamentoVisual.php");
+            header("location: ../paginas/medicamentos/registrarMedicamentoVisual.php");
         }
         else
         {
             $_SESSION['mensaje'] = "El medicamento $nombre ya existía";
-            header("location: ../paginas/medicamentos/crearMedicamentoVisual.php");
+            header("location: ../paginas/medicamentos/registrarMedicamentoVisual.php");
         }
     }
     else
