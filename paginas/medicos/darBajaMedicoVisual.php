@@ -16,7 +16,7 @@
             <div class="card p-4 shadow-lg">
                 <h1>Dar baja Medico</h1>
                 <div class="input-group mb-3">
-                    <?php include('../../backend/registrarMedicoFormulario.php'); ?>
+                    <?php include('../../backend/darBajaMedico.php'); ?>
                 </div>
             </div>
         </div>

@@ -29,7 +29,7 @@
 
                         <!-- Botón de iniciar sesión, visible en ambas versiones -->
                         <li class="nav-item ms-3">
-                            <a href="paginas/IniciarSesionVisual.php" class="btn btn-primary">Iniciar Sesión</a>
+                            <a href="paginas/IniciarSesionVisual.php" class="btn btn-primario">Cerrar sesion</a>
                         </li>
                     </ul>
                 </div>

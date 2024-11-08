@@ -17,18 +17,16 @@
         </div>
     </header>
 
-    <!-- Main content -->
-    <main class="flex-grow-1 d-flex justify-content-center align-items-center w-100">
-        <div class="form-box">
+    <main class="flex-grow-1 d-flex justify-content-center align-items-center p-4">
+        <div class="form-box ">
             <div class="card p-4 shadow-lg">
                 <?php include('../backend/iniciarSesionFormulario.php') ?>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-fondoClaro w-100">
-        <div class="container-fluid w-100 text-center">
+    <footer class="bg-fondoOscuro mt-3">
+        <div class="container-fluid text-center">
             <?php include('footer.php') ?>
         </div>
     </footer>

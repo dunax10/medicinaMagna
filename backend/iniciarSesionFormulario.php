@@ -6,14 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/estiloIniciarSesion.css">
-    
+    <title>Iniciar Sesión</title>  
 </head>
 <body>
-    <div class="contenedorSesion">
+    <div class="contenedorSesion b">
         <h2 class="text-center mb-4">Iniciar Sesión</h2>
         <form action="../backend/iniciarSesion.php" method="post">
             <!-- Email input -->
@@ -28,11 +24,11 @@
             </div>
             <!-- Submit button -->
             <div class="d-grid">
-                <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+                <button type="submit" name="enviar" class="btn btn-primario">Enviar</button>
             </div>
             <!-- Link to reset password -->
             <div class="text-center mt-3">
-                <a href="crearContraseñaFormulario.php" class="btn-link">¿Primera vez? Establecer contraseña</a>
+                <a href="../paginas/registrarseVisual.php" class="btn-link">¿Primera vez? Establecer contraseña</a>
             </div>
         </form>
         <div class="text-center text-muted mt-4">
