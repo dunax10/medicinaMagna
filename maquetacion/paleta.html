@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paleta de Colores</title>
+    <style>
+        :root {
+            --celeste: #bcf8ecff;
+            --light-blue: #aed9e0ff;
+            --neon-blue: #5465ffff;
+            --oxford-blue: #0a1128ff;
+            --penn-blue: #001f54ff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--oxford-blue);
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .color-box {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .celeste {
+            background-color: var(--celeste);
+            color: #000;
+        }
+
+        .light-blue {
+            background-color: var(--light-blue);
+            color: #000;
+        }
+
+        .neon-blue {
+            background-color: var(--neon-blue);
+        }
+
+        .oxford-blue {
+            background-color: var(--oxford-blue);
+        }
+
+        .penn-blue {
+            background-color: var(--penn-blue);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--oxford-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Paleta de Colores</h1>
+
+    <div class="color-palette">
+        <div class="color-box celeste">Celeste<br>#bcf8ec</div>
+        <div class="color-box light-blue">Light Blue<br>#aed9e0</div>
+        <div class="color-box neon-blue">Neon Blue<br>#5465ff</div>
+        <div class="color-box oxford-blue">Oxford Blue<br>#0a1128</div>
+        <div class="color-box penn-blue">Penn Blue<br>#001f54</div>
+    </div>
+
+</body>
+</html>
