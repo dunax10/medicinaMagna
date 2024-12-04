@@ -22,10 +22,12 @@
             {
                 if($_SESSION['admin'] == true)
                 {
-                        echo "<form action='../../backend/restaurarEnfermedad.php' method='post'>
-                            <input type='hidden' name='idEnfermedad' value='$idEnfermedad'>
-                            <input type='submit' value='X' class='btn btn-terciario'>
-                        </form>";
+                    echo "<form action='../../backend/restaurarEnfermedad.php' method='post' class='d-inline'>
+                    <input type='hidden' name='idEnfermedad' value='$idEnfermedad'>
+                    <button type='submit' class='btn btn-danger btn-sm'>
+                        <i class='bi bi-x'></i> Restaurar
+                    </button>
+                  </form>";
                 }
             }
             echo "<strong><span>id $idEnfermedad nombre $nombre</span></strong><br>";

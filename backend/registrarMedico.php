@@ -45,6 +45,7 @@
         else 
         {
             echo "Registro insertado exitosamente.";
+            
         }
 
         // Cerrar la declaración

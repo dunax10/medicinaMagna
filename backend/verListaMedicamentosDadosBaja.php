@@ -22,7 +22,7 @@
                 {
                         echo "<form action='../../backend/restaurarMedicamentos.php' method='post'>
                             <input type='hidden' name='idMedicamento' value='$idMedicamento'>
-                            <input type='submit' value='X'>
+                            <input type='submit' value='X' class='btn btn-rojo m-2' >
                         </form>";
                 }
             }
