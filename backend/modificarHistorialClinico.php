@@ -1,6 +1,5 @@
 <?php
     include('conexion.php');
-    session_start();
     $idHistorial = $_POST['idHistorial'];
     $idEnfermedad = $_POST['idEnfermedad'] ?? 0;
     $idMedicamento = $_POST['idMedicamento'] ?? 0;

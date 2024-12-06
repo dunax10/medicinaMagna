@@ -22,52 +22,56 @@
     </style>
 </head>
 <body>
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Listado de Médicos</h2>
-        <?php
-            while ($stmt->fetch()) {
-        ?>
-            <div class="border p-3 m-5">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <strong>ID:</strong> <?= $idMedico ?> <br>
-                        <strong>Nombre:</strong> <?= $nombre ?> <?= $apellido ?> <br>
-                        <strong>DNI:</strong> <?= $dni ?> <br>
-                        <strong>Teléfono:</strong> <?= $telefono ?> <br>
-                        <strong>Domicilio:</strong> <?= $domicilio ?> <br>
-                        <strong>Fecha de Ingreso:</strong> <?= $fechaIngreso ?> <br>
-                        <strong>Sexo:</strong> <?= $sexo ?> <br>
-                        <strong>Fecha de Nacimiento:</strong> <?= $fechaNacimiento ?>
+    <div class="container my-3">
+        <h2 class="text-center mb-3">Listado de Médicos</h2>
+        <div class="row">
+            <?php
+                while ($stmt->fetch()) {
+            ?>
+                <div class="col-md-6 mb-4">
+                    <div class="border p-3 shadow">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <p><strong>ID:</strong> <?= $idMedico ?></p>
+                                <p><strong>Nombre:</strong> <?= $nombre ?> <?= $apellido ?></p>
+                                <p><strong>DNI:</strong> <?= $dni ?></p>
+                                <p><strong>Teléfono:</strong> <?= $telefono ?></p>
+                                <p><strong>Domicilio:</strong> <?= $domicilio ?></p>
+                                <p><strong>Fecha de Ingreso:</strong> <?= $fechaIngreso ?></p>
+                                <p><strong>Sexo:</strong> <?= $sexo ?></p>
+                                <p><strong>Fecha de Nacimiento:</strong> <?= $fechaNacimiento ?></p>
+                            </div>
+                            <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true) { ?>
+                                <div class="d-flex flex-column gap-2">
+                                    <form action="modificarMedicosVisual.php" method="post">
+                                        <input type="hidden" name="idMedico" value="<?= $idMedico ?>">
+                                        <input type="hidden" name="nombre" value="<?= $nombre ?>">
+                                        <input type="hidden" name="apellido" value="<?= $apellido ?>">
+                                        <input type="hidden" name="dni" value="<?= $dni ?>">
+                                        <input type="hidden" name="telefono" value="<?= $telefono ?>">
+                                        <input type="hidden" name="domicilio" value="<?= $domicilio ?>">
+                                        <input type="hidden" name="fechaIngreso" value="<?= $fechaIngreso ?>">
+                                        <input type="hidden" name="sexo" value="<?= $sexo ?>">
+                                        <input type="hidden" name="fechaNacimiento" value="<?= $fechaNacimiento ?>">
+                                        <button type="submit" class="btn btn-terciario btn-sm">Modificar</button>
+                                    </form>
+                                    <form action="../../backend/darBajaMedico.php" method="post">
+                                        <input type="hidden" name="idMedico" value="<?= $idMedico ?>">
+                                        <button type="submit" class="btn btn-rojo btn-sm">Eliminar</button>
+                                    </form>
+                                </div>
+                            <?php } ?>
+                        </div>
                     </div>
-                    <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true) { ?>
-                        <form action="modificarMedicosVisual.php" method="post" class="mt-2">
-                            <input type="hidden" name="idMedico" value="<?= $idMedico ?>">
-                            <input type="hidden" name="nombre" value="<?= $nombre ?>">
-                            <input type="hidden" name="apellido" value="<?= $apellido ?>">
-                            <input type="hidden" name="dni" value="<?= $dni ?>">
-                            <input type="hidden" name="telefono" value="<?= $telefono ?>">
-                            <input type="hidden" name="domicilio" value="<?= $domicilio ?>">
-                            <input type="hidden" name="fechaIngreso" value="<?= $fechaIngreso ?>">
-                            <input type="hidden" name="sexo" value="<?= $sexo ?>">
-                            <input type="hidden" name="fechaNacimiento" value="<?= $fechaNacimiento ?>">
-                            <button type="submit" class="btn btn-terciario">Modificar</button>
-                        </form>
-                        <form action="../../backend/darBajaMedico.php" method="post">
-                            <input type="hidden" name="idMedico" value="<?= $idMedico ?>">
-                            <button type="submit" class="btn btn-rojo">Eliminar</button>
-                        </form>
-                    <?php } ?>
                 </div>
-            </div>
-        <?php
-            }
-            $stmt->close();
-        ?>
+            <?php
+                }
+                $stmt->close();
+            ?>
+        </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
 
 <?php

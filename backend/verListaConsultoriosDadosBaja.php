@@ -1,7 +1,6 @@
 <?php
     include('conexion.php');
     include('mensaje.php');
-    session_start();
     
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
         $idUsuario = $_SESSION['idUsuario'];
@@ -17,11 +16,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Empleados</title>
+    <title>Lista de consultorio dados de baja </title>
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Listado de Empleados</h1>
         <div class="row">
         <?php
             while ($stmt->fetch()) {
@@ -44,9 +42,6 @@
         ?>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

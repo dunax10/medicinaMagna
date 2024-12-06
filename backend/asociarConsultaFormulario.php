@@ -32,8 +32,9 @@ include('mensaje.php');
 
                 <label>Hora del turno (formato de 24 horas hh:mm)</label>
                 <input type="text" name="hora" placeholder="Ingrese la hora" class="form-control" required><br>
-
-                <input type="submit" name="enviar" value="Enviar" class="btn btn-terciario">
+                <div class="d-flex justify-content-center mt-4">
+                    <input type="submit" class="btn btn-terciario" name="enviar" value="Enviar">
+                </div>
             </form>
         </body>
         </html>

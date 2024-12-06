@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../scss/estiloBootstrap.css">
-    <title>Registrar Medicos | Medicina Magna</title>
+    <title>Modificar Medicos | Medicina Magna</title>
 </head>
 <body class="bg-fondoClaro">
     <header class="bg-secundario ">
@@ -14,9 +14,9 @@
     <main class="bg-fondoClaro flex-grow-1 d-flex justify-content-center align-items-center w-100 my-5">
         <div class="form-box my-4">
             <div class="card p-4 shadow-lg">
-                <h2 class="p-3">Modificar Medico/a</h2>
+                <h2 class="p-3">Modificar Medicamento</h2>
                 <div class="input-group mb-3">
-                    <?php include('../../backend/modificarMedicoFormulario.php'); ?>
+                    <?php include('../../backend/modificarMedicamentoFormulario.php'); ?>
                 </div>
             </div>
         </div>

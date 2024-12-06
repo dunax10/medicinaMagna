@@ -47,8 +47,9 @@
                     <select id='BuscarConsultorios' style='width: 200px;' lang="es" name="idConsultorio">
                         <option value='0'>- Buscar consultorios -</option>
                     </select><br>
-
-                    <input type="submit" name="enviar" value="Enviar">
+                    <div class="d-flex justify-content-center m-4">
+                        <input type="submit" class="btn btn-terciario" name="enviar" value="Enviar">
+                    </div>
                 </form>
             </body>
             </html>

@@ -1,6 +1,5 @@
 <?php
     include('conexion.php');
-    session_start();
     $idConsultorio = $_POST['idConsultorio'];
     $nombre = $_POST['nombre'];
     // Preparar la consulta

@@ -23,37 +23,51 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="../backend/modificarMedico.php" method="post">
+    <div class="container my-2">
+        <form action="../../backend/modificarMedico.php" method="post">
+            <div class="row">
+                <!-- Primera columna -->
+                <div class="col-md-6">
                     <label>Nombre:</label>
-                    <input type="text" class="my-1" name="nombre" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
-                    
-                    <label>Dni:</label>
-                    <input type="number" class="my-1" name="dni" placeholder="<?= $dni ?>" value="<?= $dni ?>" required><br>
-                    
-                    <label>Telefono:</label>
-                    <input type="text" class="my-1" name="telefono" placeholder="<?= $telefono ?>" value="<?= $telefono ?>" required><br>
-                    
+                    <input type="text" class="my-1 form-control" name="nombre" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
+
+                    <label>DNI:</label>
+                    <input type="number" class="my-1 form-control" name="dni" placeholder="<?= $dni ?>" value="<?= $dni ?>" required><br>
+
+                    <label>Teléfono:</label>
+                    <input type="text" class="my-1 form-control" name="telefono" placeholder="<?= $telefono ?>" value="<?= $telefono ?>" required><br>
+
                     <label>Domicilio:</label>
-                    <input type="text" class="my-1" name="domicilio" placeholder="<?= $domicilio ?>" value="<?= $domicilio ?>" required><br>
-                    
+                    <input type="text" class="my-1 form-control" name="domicilio" placeholder="<?= $domicilio ?>" value="<?= $domicilio ?>" required><br>
+                </div>
+
+                <!-- Segunda columna -->
+                <div class="col-md-6">
                     <label>Fecha de ingreso:</label>
-                    <input type="text" class="my-1" name="fechaIngreso" placeholder="<?= $fechaIngreso ?>" value="<?= $fechaIngreso ?>" required><br>
-                    
+                    <input type="text" class="my-1 form-control" name="fechaIngreso" placeholder="<?= $fechaIngreso ?>" value="<?= $fechaIngreso ?>" required><br>
+
                     <label>Fecha de nacimiento:</label>
-                    <input type="text" class="my-1"  name="fechaNacimiento" placeholder="<?= $fechaNacimiento ?>" value="<?= $fechaNacimiento ?>" required><br>
-                    
+                    <input type="text" class="my-1 form-control" name="fechaNacimiento" placeholder="<?= $fechaNacimiento ?>" value="<?= $fechaNacimiento ?>" required><br>
+
                     <label>Sexo:</label>
-                    <select class="my-1" name="sexo" required>
+                    <select class="my-1 form-control" name="sexo" required>
                         <option value="<?= $sexo ?>" selected><?= $sexo ?></option>
                         <option value="F">Mujer</option>
                         <option value="M">Hombre</option>
                     </select><br>
 
                     <input type="hidden" name="idMedico" value="<?= $idMedico ?>">
+                </div>
+            </div>
 
-                    <input type="submit" class="btn btn-terciario" name="enviar" value="Enviar">
-                </form>
-            </body>
+            <!-- Botón centrado -->
+            <div class="d-flex justify-content-center mt-4">
+                <input type="submit" class="btn btn-terciario" name="enviar" value="Enviar">
+            </div>
+        </form>
+    </div>
+</body>
+
             </html>
 
             <?php

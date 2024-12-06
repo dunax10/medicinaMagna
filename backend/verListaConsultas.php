@@ -17,21 +17,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de consultas</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .medicina-card {
-            padding: 1rem;
-            background-color: #f8f9fa;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Listado de Consultas</h1>
+    <div class="container m-1">
+        <h1 class="text-center my-3">Listado de Consultas</h1>
         <div class="row">
         <?php
             while ($stmt->fetch()) {
@@ -57,9 +46,6 @@
         ?>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

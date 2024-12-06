@@ -30,30 +30,31 @@
             </head>
             <body>
                 <form action="../backend/modificarHistorialClinico.php" method="post">
-                    <label>Seleccione un paciente:</label>
+                    <label class="m-1 p-1">Seleccione un paciente:</labelc>
                     <select id='BuscarPacientes' style='width: 200px;' lang="es" name="idPaciente" value="<?= $nombrePaciente ?>" required>
                         <option value='<?= $idPaciente ?>' selected><?= $nombrePaciente ?></option>
                         <option value='0'>- Buscar pacientes -</option>
                     </select><br>
                     
-                    <label>Descripcion del malestar:</label>
-                    <input type="text" name="descripcionMalestar" placeholder="<?= $descripcionMalestar ?>" value="<?= $descripcionMalestar ?>" required><br>
+                    <label class="m-1 p-1">Descripcion del malestar:</label>
+                    <input type="text" name="descripcionMalestar" class="form-control m-1 p-1" placeholder="<?= $descripcionMalestar ?>" value="<?= $descripcionMalestar ?>" required><br>
                     
                     <input type="hidden" name="idHistorial" value="<?= $idHistorial ?>">
                     
-                    <label>Seleccione una enfermedad:</label>
+                    <label class="m-1 p-1">Seleccione una enfermedad:</label>
                     <select id='BuscarEnfermedades' style='width: 200px;' lang="es" name="idEnfermedad">
                         <option value="0" selected><?= $nombreEnfermedad ?></option>
                         <option value='0'>- Buscar enfermedades -</option>
                     </select><br>
                         
-                    <label>Seleccione un medicamento:</label>
+                    <label class="m-1 p-1">Seleccione un medicamento:</label>
                     <select id='BuscarMedicamentos' style='width: 200px;' lang="es" name="idMedicamento">
                         <option value="0" selected><?= $nombreMedicamento ?></option>
                         <option value='0'>- Buscar medicamentos -</option>
                     </select><br>
-
-                    <input type="submit" name="enviar" value="Enviar">
+                    <div class="d-flex justify-content-center mt-4">
+                        <input type="submit" class="btn btn-terciario" name="enviar" value="Enviar">
+                    </div>
                 </form>
             </body>
             </html>

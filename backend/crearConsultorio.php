@@ -1,5 +1,4 @@
 <?php
-    session_start();
     if(isset($_SESSION['admin']))
     {
         if($_SESSION['admin'] == true)
@@ -20,12 +19,12 @@
                 $stmt->bind_param('s', $nombre);
                 $stmt->execute();
                 $_SESSION['mensaje'] = "El consultorio fue creado con éxito";
-                header("location: ../paginas/consultorios/registrarConsultorioVisual.php");
+                header("location: ../paginas/consultorios/crearConsultorioVisual.php");
             }
             else
             {
                 $_SESSION['mensaje'] = "El consultorio $nombre ya existía";
-                header("location: ../paginas/consultorios/registrarConsultorioVisual.php");
+                header("location: ../paginas/consultorios/crearConsultorioVisual.php");
             }
         }
         else

@@ -17,22 +17,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Medicamentos</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Listado de Medicamentos</h1>
+    <div class="container my-3">
+        <h1 class="text-center m-1">Listado de Medicamentos</h1>
         <div class="row">
         <?php
             while ($stmt->fetch()) {
         ?>
             <div class="col-md-4">
-                <div class="border p-3 m-3">
+                <div class="border shadow p-3 m-3">
                     <strong>ID:</strong> <?= $idMedicina ?> <br>
                     <strong>Nombre:</strong> <?= $nombre ?>
                     <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
-                        <form action="../../backend/modificarMedicamentoFormulario.php" method="post" class="mt-2">
+                        <form action="modificarMedicamentoVisual.php" method="post" class="mt-2">
                             <input type="hidden" name="idMedicamento" value="<?= $idMedicina ?>">
                             <input type="hidden" name="nombre" value="<?= $nombre ?>">
                             <button type="submit" class="btn btn-terciario">Modificar</button>
@@ -50,9 +48,6 @@
         ?>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

@@ -1,8 +1,6 @@
 <?php
     include('conexion.php');
     include('mensaje.php');
-    session_start();
-    
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
         $idUsuario = $_SESSION['idUsuario'];
 
@@ -31,7 +29,7 @@
                     <strong>ID:</strong> <?= $idConsultorio ?> <br>
                     <strong>Nombre:</strong> <?= $nombre ?> <br>
                     <?php if ($_SESSION['admin'] == true): ?>
-                        <form action="../../backend/modificarConsultorioFormulario.php" method="post" class="mt-2">
+                        <form action="modificarConsultorioVisual.php" method="post" class="mt-2">
                             <input type="hidden" name="idConsultorio" value="<?= $idConsultorio ?>">
                             <input type="hidden" name="nombre" value="<?= $nombre ?>">
                             <button type="submit" class="btn btn-terciario">Modificar</button>

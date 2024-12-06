@@ -1,6 +1,5 @@
 <?php
     include('mensaje.php');
-    session_start();
     if(isset($_SESSION['medico']))
     {
         if($_SESSION['medico'] == true)
@@ -17,12 +16,16 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="../backend/modificarMedicamento.php" method="post">
+            <div class="container my-1">
+                <form action="../../backend/modificarMedicamento.php" method="post">
                     <label>Nombre:</label>
-                    <input type="text" name="nombre" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
+                    <input type="text" class="form-control" name="nombre" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
                     <input type="hidden" name="idMedicamento" value="<?= $idMedicamento ?>">
-                    <input type="submit" name="enviar" value="Enviar">
+                    <div class="d-flex justify-content-center m-1">
+                        <input type="submit" class="btn btn-terciario" name="enviar" value="Enviar">
+                    </div>
                 </form>
+            </div>
             </body>
             </html>
 

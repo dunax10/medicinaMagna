@@ -21,28 +21,32 @@
             </head>
             <body>
                 <form action="../../backend/asociarRecetas.php" method="post">
-                    <label>Seleccione un paciente:</label>
-                    <select id='BuscarPacientes' style='width: 200px;' lang="es" name="idPaciente" required>
+                    <label class="m-1">Seleccione un paciente:</label>
+                    <select id='BuscarPacientes' class="form-select my-1 p-1" style='width: 200px;' lang="es" name="idPaciente" required>
+                        <option selected>Elegir paciente</option>
                         <option value='0'>- Buscar pacientes -</option>
                     </select><br>
 
-                    <label>Cantidad del medicamento:</label>
-                    <input type="number" name="cantidadMedicamento" placeholder="Ingrese la cantidad" required><br>
+                    <label class="m-1">Cantidad del medicamento:</label>
+                    <input type="number"  class="form-control my-1 p-1"name="cantidadMedicamento" placeholder="Ingrese la cantidad" required><br>
 
                     <label>Periodo del medicamento:</label>
-                    <input type="text" name="periodoMedicamento" placeholder="Ingrese el periodo (ej: 8hs)" required><br>
+                    <input type="text" class="form-control my-1 p-1" name="periodoMedicamento" placeholder="Ingrese el periodo (ej: 8hs)" required><br>
 
-                    <label>Seleccione una enfermedad:</label>
-                    <select id='BuscarEnfermedades' style='width: 200px;' lang="es" name="idEnfermedad">
+                    <label class="m-1">Seleccione una enfermedad:</label>
+                    <select id='BuscarEnfermedades' class="form-select my-1 p-1" style='width: 200px;' lang="es" name="idEnfermedad">
+                    <option selected>Elegir enfermedad</option>
                         <option value='0'>- Buscar enfermedades -</option>
                     </select><br>
 
-                    <label>Seleccione un medicamento:</label>
-                    <select id='BuscarMedicamentos' style='width: 200px;' lang="es" name="idMedicamento" required>
+                    <label class="m-1">Seleccione un medicamento:</label>
+                    <select id='BuscarMedicamentos' class="form-select my-1 p-1" style='width: 200px;' lang="es" name="idMedicamento" required>
+                    <option selected>Elegir medicamento</option>
                         <option value='0'>- Buscar medicamentos -</option>
                     </select><br>
-
-                    <input type="submit" name="enviar" value="Enviar">
+                    <div class="d-flex justify-content-center mt-4">
+                        <input type="submit" class="btn btn-primary"name="enviar" value="Enviar">
+                    </div>
                 </form>
             </body>
             </html>
