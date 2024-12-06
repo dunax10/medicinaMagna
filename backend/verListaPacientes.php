@@ -1,6 +1,6 @@
 <?php
-    include('conexion.php');
-    include('mensaje.php');
+    include('../../backend/conexion.php');
+    include('../../backend/mensaje.php');
         $idUsuario = $_SESSION['idUsuario'];
 
         $sql = "SELECT * FROM pacientes WHERE vigente = 1 ORDER BY nombre ASC;";
@@ -31,18 +31,18 @@
                             <p class="card-text mb-1"><strong>Sangre:</strong> <?= $tipoSangre ?></p>
                         </div>
                         <div class="d-flex justify-content-between mt-2">
-                            <a href="../historialesClinicos/verHistorialClinicoVisual.php?idPaciente=<?= $idPaciente ?>" class="btn btn-sm btn-outline-info">Historial</a>
-                            <a href="../recetas/verListaRecetasVisual.php?idPaciente=<?= $idPaciente ?>" class="btn btn-sm btn-outline-primary">Recetas</a>
+                            <a href="../historialesClinicos/verHistorialClinicoVisual.php?idPaciente=<?= $idPaciente ?>" class="btn btn-primary">Historial</a>
+                            <a href="../recetas/verListaRecetasVisual.php?idPaciente=<?= $idPaciente ?>" class="btn btn-primary">Recetas</a>
                         </div>
                         <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
                             <div class="d-flex justify-content-between mt-2">
-                                <form action="../../backend/modificarPacienteFormulario.php" method="post">
+                                <form action="modificarPacienteVisual.php" method="post">
                                     <input type="hidden" name="idPaciente" value="<?= $idPaciente ?>">
-                                    <button type="submit" class="btn btn-sm btn-outline-warning">Modificar</button>
+                                    <button type="submit" class="btn btn-fondoOscuro">Modificar</button>
                                 </form>
                                 <form action="../../backend/darBajaPacientes.php" method="post">
                                     <input type="hidden" name="idPaciente" value="<?= $idPaciente ?>">
-                                    <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                                    <button type="submit" class="btn btn-rojo">Eliminar</button>
                                 </form>
                             </div>
                         <?php endif; ?>

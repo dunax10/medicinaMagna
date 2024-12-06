@@ -21,38 +21,40 @@
     <title>Administrar Obras Sociales</title>
 </head>
 <body>
-    <div class="container p-5 my-5">
-        <?php
-            while ($stmt->fetch()) {
-        ?>
-            <div class="border p-3 m-3">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <strong>ID:</strong> <?= $idObraSocial ?> <br>
-                        <strong>Nombre:</strong> <?= $nombre ?> <br>
-                        <strong>Teléfono:</strong> <?= $telefono ?>
+    <div class="container p-3 my-2">
+        <div class="row">
+            <?php
+                while ($stmt->fetch()) {
+            ?>
+                <div class="col-md-6 mb-3">
+                    <div class="border p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>ID:</strong> <?= $idObraSocial ?> <br>
+                                <strong>Nombre:</strong> <?= $nombre ?> <br>
+                                <strong>Teléfono:</strong> <?= $telefono ?>
+                            </div>
+                            <form class="p-3" action="modificarObraSocialVisual.php" method="post">
+                                <input type="hidden" name="idObraSocial" value="<?= $idObraSocial ?>">
+                                <input type="hidden" name="nombre" value="<?= $nombre ?>">
+                                <input type="hidden" name="telefono" value="<?= $telefono ?>">
+                                <button type="submit" class="btn btn-terciario">Modificar</button>
+                            </form>
+                            <form action="../../backend/darBajaObraSocial.php" method="post">
+                                <input type="hidden" name="idObraSocial" value="<?= $idObraSocial ?>">
+                                <button type="submit" class="btn btn-rojo">Eliminar</button>
+                            </form>
+                        </div>
                     </div>
-                    <form class="p-3"action="../../backend/modificarObraSocialFormulario.php" method="post">
-                        <input type="hidden" name="idObraSocial" value="<?= $idObraSocial ?>">
-                        <input type="hidden" name="nombre" value="<?= $nombre ?>">
-                        <input type="hidden" name="telefono" value="<?= $telefono ?>">
-                        <button type="submit" class="btn btn-terciario">Modificar</button>
-                    </form>
-                    <form action="../../backend/darBajaObraSocial.php" method="post">
-                        <input type="hidden" name="idObraSocial" value="<?= $idObraSocial ?>">
-                        <button type="submit" class="btn btn-rojo">Eliminar</button>
-                    </form>
                 </div>
-            </div>
-        <?php
-            }
-            $stmt->close();
-        ?>
+            <?php
+                }
+                $stmt->close();
+            ?>
+        </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
 
 <?php

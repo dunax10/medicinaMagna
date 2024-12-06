@@ -14,7 +14,6 @@
     <main class="bg-fondoClaro flex-grow-1 d-flex justify-content-center align-items-center w-100 my-5">
         <div class="form-box my-4 p-4">
             <div class="card p-4 shadow-lg">
-                <h2 class="p-3">Lista Empleado</h2>
                 <?php include('../../backend/verListaEmpleados.php'); ?>
             </div>
         </div>

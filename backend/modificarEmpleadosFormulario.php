@@ -1,6 +1,5 @@
 <?php
     include('mensaje.php');
-    session_start();
     if(isset($_SESSION['admin']))
     {
         if($_SESSION['admin'] == true)
@@ -18,12 +17,12 @@
                 <title>Document</title>
             </head>
             <body>
-                <form action="../backend/modificarEmpleado.php" method="post">
+                <form action="../../backend/modificarEmpleado.php" method="post">
                     <label>Nombre:</label>
-                    <input type="text" name="nombre" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
+                    <input type="text" class="form-control p-1 my-1" name="nombre" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
                     <input type="hidden" name="idEmpleado" value="<?= $idEmpleado ?>">
                     <label>Email:</label>
-                    <input type="email" name="mail" placeholder="<?= $mail ?>" value="<?= $mail ?>" required><br>
+                    <input type="email" class="form-control p-1 my-1" name="mail" placeholder="<?= $mail ?>" value="<?= $mail ?>" required><br>
                     <input type="submit" name="enviar" class="btn btn-terciario"value="Enviar">
                 </form>
             </body>

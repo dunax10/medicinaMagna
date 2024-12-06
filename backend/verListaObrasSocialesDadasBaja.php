@@ -16,24 +16,28 @@
             $stmt->store_result();
             //traigo los resultados de la consulta y la recorro con un while
             $stmt->bind_result($idObraSocial, $nombre, $telefono, $vigente);
-            while ($stmt->fetch()) {
-                echo '
-                <div class="container my-2">
-                    <div class="card border-0 shadow-sm p-3 d-flex flex-row align-items-center justify-content-between">
-                        <div>
-                            <p class="mb-1"><strong>ID:</strong> ' . $idObraSocial . '</p>
-                            <p class="mb-1"><strong>Nombre:</strong> ' . $nombre . '</p>
-                            <p class="mb-1"><strong>Teléfono:</strong> ' . $telefono . '</p>
-                        </div>
-                        <form action="../../backend/restaurarObraSocial.php" method="post" class="m-0">
-                            <input type="hidden" name="idObraSocial" value="' . $idObraSocial . '">
-                            <button type="submit" class="btn btn-verde btn-sm" title="Restaurar">^</button>
-                        </form>
-                    </div>
-                </div>';
-            }
-            
-            $stmt->close();
+            echo "<div class='container my-2'>";
+            echo "<div class='row'>";
+                    while ($stmt->fetch()) {
+                        echo '
+                        <div class="col-md-6 mb-3">
+                            <div class="card border-0 shadow-sm p-3 d-flex flex-row align-items-center justify-content-between">
+                                <div>
+                                    <p class="mb-1"><strong>ID:</strong> ' . $idObraSocial . '</p>
+                                    <p class="mb-1"><strong>Nombre:</strong> ' . $nombre . '</p>
+                                    <p class="mb-1"><strong>Teléfono:</strong> ' . $telefono . '</p>
+                                </div>
+                                <form action="../../backend/restaurarObraSocial.php" method="post" class="m-0">
+                                    <input type="hidden" name="idObraSocial" value="' . $idObraSocial . '">
+                                    <button type="submit" class="btn btn-verde btn-sm" title="Restaurar">Restaurar</button>
+                                </form>
+                            </div>
+                        </div>';
+                    }
+                    $stmt->close();
+            echo "</div>";
+        echo "</div>";
+        
         }
 
     }

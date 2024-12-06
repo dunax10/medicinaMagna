@@ -1,6 +1,5 @@
 <?php
     include('mensaje.php');
-    session_start();
     if(isset($_SESSION['admin']))
     {
         if($_SESSION['admin'] == true)
@@ -20,7 +19,7 @@
             </head>
             <body>
                 <div>
-                <form action="../backend/modificarObraSocial.php" method="post">
+                <form action="../../backend/modificarObraSocial.php" method="post">
                     <label>Nombre:</label>
                     <input type="text" name="nombre"class="form-control" placeholder="<?= $nombre ?>" value="<?= $nombre ?>" required><br>
                     <label>Telefono:</label>
